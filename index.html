@@ -1,556 +1,899 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasty Kitchen | Food Recipes</title>
 
-    <title>Tasty Kitchen | Delicious Recipes</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #fffaf3;
-            color: #333;
-            line-height: 1.6;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf3;
+    color: #333;
+}
 
-        /* HEADER */
+/* HEADER */
 
-        header {
-            background: #e85d3f;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
+header {
+    background: #a83220;
+    color: white;
+    padding: 22px 15px;
+    text-align: center;
+}
 
-        header h1 {
-            font-size: 36px;
-            margin-bottom: 5px;
-        }
+header h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+}
 
-        header p {
-            font-size: 16px;
-        }
+header p {
+    margin-top: 5px;
+    font-size: 15px;
+}
 
-        /* NAVIGATION */
+/* NAVIGATION */
 
-        nav {
-            background: #333;
-            padding: 16px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+nav {
+    background: #38251e;
+    padding: 16px 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 14px;
-            font-size: 16px;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 13px;
+    font-size: 15px;
+}
 
-        nav a:hover {
-            color: #ffb99e;
-        }
+nav a:hover {
+    color: #ffbd80;
+}
 
-        /* HERO SECTION */
+/* HERO */
 
-        .hero {
-            text-align: center;
-            padding: 75px 20px;
-            background: linear-gradient(
-                rgba(255, 227, 194, 0.90),
-                rgba(255, 227, 194, 0.90)
-            ),
-            url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200");
+.hero {
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 45px 20px;
+    color: white;
 
-            background-size: cover;
-            background-position: center;
-        }
+    background:
+    linear-gradient(rgba(30,15,8,.55), rgba(30,15,8,.55)),
+    url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1400")
+    center/cover;
+}
 
-        .hero h2 {
-            font-size: 38px;
-            color: #b83d25;
-            margin-bottom: 12px;
-        }
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
 
-        .hero p {
-            font-size: 19px;
-            margin-bottom: 25px;
-        }
+.hero p {
+    font-size: 19px;
+    max-width: 600px;
+    margin-bottom: 25px;
+}
 
-        .hero button {
-            background: #e85d3f;
-            color: white;
-            border: none;
-            padding: 14px 30px;
-            border-radius: 30px;
-            font-size: 17px;
-            cursor: pointer;
-        }
+.main-btn {
+    background: #e85d3f;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        .hero button:hover {
-            background: #333;
-        }
+.main-btn:hover {
+    background: #a83220;
+}
 
-        /* GENERAL SECTION */
+/* COMMON SECTIONS */
 
-        section {
-            padding: 50px 20px;
-        }
+section {
+    padding: 55px 20px;
+}
 
-        .section-title {
-            text-align: center;
-            color: #b83d25;
-            font-size: 30px;
-            margin-bottom: 30px;
-        }
+.section-title {
+    text-align: center;
+    color: #a83220;
+    font-size: 31px;
+    margin-bottom: 12px;
+}
 
-        /* SEARCH */
+.section-subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
 
-        .search-section {
-            text-align: center;
-            padding: 35px 20px;
-            background: white;
-        }
+/* SEARCH */
 
-        .search-section input {
-            width: 90%;
-            max-width: 500px;
-            padding: 15px;
-            border: 2px solid #e85d3f;
-            border-radius: 30px;
-            font-size: 16px;
-            outline: none;
-        }
+.search-area {
+    text-align: center;
+    padding: 30px 15px;
+    background: white;
+}
 
-        /* CATEGORIES */
+.search-area input {
+    width: 90%;
+    max-width: 550px;
+    padding: 15px 20px;
+    border: 2px solid #e85d3f;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+}
 
-        .categories {
-            background: #fff0df;
-            text-align: center;
-        }
+/* CATEGORIES */
 
-        .category-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+.categories {
+    background: #fff0df;
+}
 
-        .category {
-            background: white;
-            padding: 20px 28px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px #ddd;
-            font-size: 17px;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-            color: #b83d25;
-        }
+.category-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
-        .category:hover {
-            background: #e85d3f;
-            color: white;
-        }
+.category-btn {
+    background: white;
+    border: 1px solid #e8c4a8;
+    color: #a83220;
+    padding: 13px 22px;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+}
 
-        /* RECIPE CARDS */
+.category-btn:hover,
+.category-btn.active {
+    background: #a83220;
+    color: white;
+}
 
-        .recipes {
-            text-align: center;
-        }
+/* RECIPE CARDS */
 
-        .recipe-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-        }
+.recipes {
+    background: #fffaf3;
+}
 
-        .card {
-            background: white;
-            width: 290px;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 4px 14px #ddd;
-            transition: 0.3s;
-            text-align: left;
-        }
+.recipe-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1150px;
+    margin: auto;
+}
 
-        .card:hover {
-            transform: translateY(-7px);
-        }
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,.10);
+    transition: .3s;
+}
 
-        .card img {
-            width: 100%;
-            height: 190px;
-            object-fit: cover;
-        }
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 22px rgba(0,0,0,.16);
+}
 
-        .card-content {
-            padding: 18px;
-        }
+.card img {
+    display: block;
+    width: 100%;
+    height: 225px;
+    object-fit: cover;
+    background: #eee;
+}
 
-        .card h3 {
-            color: #e85d3f;
-            margin-bottom: 8px;
-        }
+.card-content {
+    padding: 18px;
+}
 
-        .card p {
-            font-size: 15px;
-            color: #555;
-        }
+.card h3 {
+    color: #a83220;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
 
-        .tag {
-            display: inline-block;
-            background: #ffe3c2;
-            color: #a83b25;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-top: 12px;
-        }
+.card p {
+    color: #666;
+    font-size: 14px;
+    min-height: 42px;
+}
 
-        /* ABOUT */
+.tag {
+    display: inline-block;
+    background: #fff0df;
+    color: #a83220;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin: 12px 0;
+}
 
-        .about {
-            background: #ffe3c2;
-            text-align: center;
-        }
+.view-btn {
+    display: block;
+    width: 100%;
+    border: none;
+    background: #e85d3f;
+    color: white;
+    padding: 12px;
+    border-radius: 7px;
+    font-size: 15px;
+    cursor: pointer;
+}
 
-        .about p {
-            max-width: 700px;
-            margin: auto;
-            font-size: 17px;
-        }
+.view-btn:hover {
+    background: #a83220;
+}
 
-        /* FOOTER */
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    color: #a83220;
+}
 
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
+/* ABOUT */
 
-        footer p {
-            margin: 5px;
-        }
+.about {
+    background: #ffe8d2;
+    text-align: center;
+}
 
-        /* MOBILE DESIGN */
+.about p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 17px;
+}
 
-        @media (max-width: 600px) {
+/* RECIPE DETAILS POPUP */
 
-            header h1 {
-                font-size: 29px;
-            }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 30;
+    inset: 0;
+    background: rgba(0,0,0,.75);
+    padding: 20px;
+    overflow-y: auto;
+}
 
-            nav {
-                padding: 13px 5px;
-            }
+.modal-content {
+    background: white;
+    max-width: 650px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 15px;
+    position: relative;
+}
 
-            nav a {
-                margin: 6px;
-                font-size: 14px;
-            }
+.modal-content h2 {
+    color: #a83220;
+    margin-bottom: 12px;
+}
 
-            .hero {
-                padding: 60px 15px;
-            }
+.modal-content h3 {
+    margin: 18px 0 8px;
+    color: #a83220;
+}
 
-            .hero h2 {
-                font-size: 27px;
-            }
+.modal-content li {
+    margin: 7px 0 7px 22px;
+    line-height: 1.5;
+}
 
-            .hero p {
-                font-size: 17px;
-            }
+.close-btn {
+    float: right;
+    background: #a83220;
+    color: white;
+    border: none;
+    padding: 8px 13px;
+    border-radius: 6px;
+    cursor: pointer;
+}
 
-            .section-title {
-                font-size: 25px;
-            }
+/* FOOTER */
 
-            .card {
-                width: 100%;
-                max-width: 350px;
-            }
+footer {
+    background: #38251e;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+    line-height: 1.8;
+}
 
-            .category {
-                padding: 15px 20px;
-            }
-        }
+/* MOBILE */
 
-    </style>
+@media(max-width: 800px) {
+    .recipe-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(max-width: 550px) {
+    header h1 {
+        font-size: 29px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 6px;
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 330px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .recipe-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        max-width: 400px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .card img {
+        height: 230px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
+<!-- HEADER -->
 
-    <header>
-        <h1>🍳 Tasty Kitchen</h1>
-        <p>Delicious Recipes for Everyone!</p>
-    </header>
+<header>
+    <h1>🍳 Tasty Kitchen</h1>
+    <p>Discover Flavours • Explore Recipes • Enjoy Cooking</p>
+</header>
 
-    <!-- NAVIGATION -->
+<!-- NAVIGATION -->
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#categories">Categories</a>
-        <a href="#recipes">Recipes</a>
-        <a href="#about">About</a>
-    </nav>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#recipes">Recipes</a>
+    <a href="#about">About</a>
+</nav>
 
-    <!-- HERO -->
+<!-- HERO -->
 
-    <section class="hero" id="home">
+<section class="hero" id="home">
+    <h2>Welcome to Tasty Kitchen!</h2>
+    <p>
+        From traditional Pakistani dishes to delicious
+        international food, discover something tasty every day.
+    </p>
+    <a href="#recipes" class="main-btn">Explore Recipes</a>
+</section>
 
-        <h2>Welcome to Tasty Kitchen!</h2>
+<!-- SEARCH -->
 
-        <p>
-            Discover amazing recipes and bring happiness
-            to your kitchen.
-        </p>
+<div class="search-area">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search Biryani, Karahi, Pizza..."
+        oninput="showRecipes()"
+    >
+</div>
 
-        <button onclick="document.getElementById('recipes').scrollIntoView({behavior:'smooth'})">
-            Explore Recipes
-        </button>
+<!-- CATEGORIES -->
 
-    </section>
+<section class="categories" id="categories">
 
-    <!-- SEARCH -->
+    <h2 class="section-title">Explore Categories</h2>
+    <p class="section-subtitle">Choose what you want to cook today!</p>
 
-    <div class="search-section">
+    <div class="category-list">
 
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="🔍 Search your favourite recipe..."
-            onkeyup="searchRecipes()"
-        >
+        <button class="category-btn active" onclick="filterRecipes('All',this)">All</button>
+
+        <button class="category-btn" onclick="filterRecipes('Desi',this)">🇵🇰 Desi Food</button>
+
+        <button class="category-btn" onclick="filterRecipes('Breakfast',this)">🍳 Breakfast</button>
+
+        <button class="category-btn" onclick="filterRecipes('Lunch',this)">🍛 Lunch</button>
+
+        <button class="category-btn" onclick="filterRecipes('Dinner',this)">🍽️ Dinner</button>
+
+        <button class="category-btn" onclick="filterRecipes('Dessert',this)">🍰 Desserts</button>
+
+        <button class="category-btn" onclick="filterRecipes('International',this)">🌎 International</button>
 
     </div>
 
-    <!-- CATEGORIES -->
+</section>
 
-    <section class="categories" id="categories">
+<!-- RECIPES -->
 
-        <h2 class="section-title">Explore Categories</h2>
+<section class="recipes" id="recipes">
 
-        <div class="category-container">
+    <h2 class="section-title">Our Delicious Recipes</h2>
+    <p class="section-subtitle">Find your next favourite meal!</p>
 
-            <button class="category" onclick="filterCategory('Breakfast')">
-                🍳 Breakfast
-            </button>
+    <div class="recipe-container" id="recipeContainer"></div>
 
-            <button class="category" onclick="filterCategory('Lunch')">
-                🍛 Lunch
-            </button>
+    <p class="no-results" id="noResults">
+        No recipes found. Try another search!
+    </p>
 
-            <button class="category" onclick="filterCategory('Dinner')">
-                🍽️ Dinner
-            </button>
+</section>
 
-            <button class="category" onclick="filterCategory('Dessert')">
-                🍰 Desserts
-            </button>
+<!-- ABOUT -->
 
-            <button class="category" onclick="filterCategory('All')">
-                All Recipes
-            </button>
+<section class="about" id="about">
 
-        </div>
+    <h2 class="section-title">About Tasty Kitchen</h2>
 
-    </section>
+    <p>
+        Tasty Kitchen is your place to discover delicious food
+        recipes. From Pakistani traditional favourites like
+        Chicken Biryani and Karahi to international dishes,
+        we make cooking enjoyable and simple for everyone.
+        Let's make every meal special!
+    </p>
 
-    <!-- POPULAR RECIPES -->
+</section>
 
-    <section class="recipes" id="recipes">
+<!-- RECIPE POPUP -->
 
-        <h2 class="section-title">Our Popular Recipes</h2>
+<div class="modal" id="recipeModal">
+    <div class="modal-content">
 
-        <div class="recipe-container" id="recipeContainer">
+        <button class="close-btn" onclick="closeRecipe()">✕ Close</button>
 
-            <div class="card" data-category="Dinner">
-                <img
-                    src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600"
-                    alt="Cheese Pizza"
-                >
+        <div id="recipeDetails"></div>
 
-                <div class="card-content">
-                    <h3>Cheese Pizza</h3>
-                    <p>A delicious homemade pizza with cheese and vegetables.</p>
-                    <span class="tag">Dinner</span>
-                </div>
-            </div>
+    </div>
+</div>
 
-            <div class="card" data-category="Lunch">
-                <img
-                    src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600"
-                    alt="Italian Pasta"
-                >
+<!-- FOOTER -->
 
-                <div class="card-content">
-                    <h3>Italian Pasta</h3>
-                    <p>Creamy and tasty pasta for your lunch or dinner.</p>
-                    <span class="tag">Lunch</span>
-                </div>
-            </div>
+<footer>
+    <h3>🍳 Tasty Kitchen</h3>
+    <p>Good Food • Happy Life ❤️</p>
+    <p>© 2026 Tasty Kitchen. All Rights Reserved.</p>
+</footer>
 
-            <div class="card" data-category="Dessert">
-                <img
-                    src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600"
-                    alt="Chocolate Cake"
-                >
 
-                <div class="card-content">
-                    <h3>Chocolate Cake</h3>
-                    <p>A sweet chocolate dessert for special moments.</p>
-                    <span class="tag">Dessert</span>
-                </div>
-            </div>
+<script>
 
-            <div class="card" data-category="Lunch">
-                <img
-              src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800"
-                    alt="Chicken Biryani"
-                >
+/* RECIPE DATABASE */
 
-                <div class="card-content">
-                    <h3>Chicken Biryani</h3>
-                    <p>Traditional spicy rice cooked with delicious chicken.</p>
-                    <span class="tag">Lunch</span>
-                </div>
-            </div>
+const recipes = [
 
-            <div class="card" data-category="Dinner">
-                <img
-                    src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600"
-                    alt="Chicken Karahi"
-                >
+{
+name: "Chicken Biryani",
+category: "Desi",
+meal: "Lunch",
+image: "https://images.unsplash.com/photo-1563379091339-03246963d96c?w=900",
+description: "Aromatic Pakistani chicken biryani with delicious spices.",
+time: "50 minutes",
+ingredients: [
+"2 cups basmati rice",
+"500g chicken",
+"2 onions",
+"2 tomatoes",
+"1 cup yogurt",
+"2 tablespoons biryani masala",
+"Oil, salt and fresh coriander"
+],
+steps: [
+"Wash and soak the rice.",
+"Fry sliced onions until golden.",
+"Add chicken, tomatoes, yogurt and spices.",
+"Cook until chicken is tender.",
+"Boil rice separately until almost cooked.",
+"Layer rice and chicken masala in a pot.",
+"Cover and cook on low heat until ready."
+]
+},
 
-                <div class="card-content">
-                    <h3>Chicken Karahi</h3>
-                    <p>A flavourful chicken dish with traditional spices.</p>
-                    <span class="tag">Dinner</span>
-                </div>
-            </div>
+{
+name: "Chicken Karahi",
+category: "Desi",
+meal: "Dinner",
+image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=900",
+description: "Traditional spicy chicken karahi with tomatoes and ginger.",
+time: "40 minutes",
+ingredients: [
+"500g chicken",
+"4 tomatoes",
+"1 tablespoon ginger garlic paste",
+"Green chillies",
+"Red chilli and salt",
+"Fresh ginger",
+"Oil and coriander"
+],
+steps: [
+"Heat oil in a karahi.",
+"Add chicken and ginger garlic paste.",
+"Cook until chicken changes colour.",
+"Add tomatoes and spices.",
+"Cook until chicken is tender and gravy thickens.",
+"Add green chillies and fresh ginger.",
+"Serve hot with naan."
+]
+},
 
-            <div class="card" data-category="Breakfast">
-                <img
-                    src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600"
-                    alt="Breakfast"
-                >
+{
+name: "Beef Nihari",
+category: "Desi",
+meal: "Dinner",
+image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=900",
+description: "A rich traditional desi stew with warming spices.",
+time: "3 hours",
+ingredients: [
+"500g beef",
+"2 onions",
+"Nihari masala",
+"Ginger garlic paste",
+"Oil and salt",
+"Fresh ginger and coriander",
+"Flour for thickening"
+],
+steps: [
+"Heat oil and fry onions.",
+"Add beef and ginger garlic paste.",
+"Add nihari masala and water.",
+"Cook slowly until the beef becomes tender.",
+"Mix flour with water and add gradually.",
+"Simmer until gravy thickens.",
+"Garnish with ginger and coriander."
+]
+},
 
-                <div class="card-content">
-                    <h3>Healthy Breakfast</h3>
-                    <p>A delicious and fresh breakfast to start your day.</p>
-                    <span class="tag">Breakfast</span>
-                </div>
-            </div>
+{
+name: "Aloo Paratha",
+category: "Desi",
+meal: "Breakfast",
+image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=900",
+description: "Crispy homemade paratha stuffed with spiced potatoes.",
+time: "30 minutes",
+ingredients: [
+"2 cups wheat flour",
+"3 boiled potatoes",
+"Green chillies",
+"Fresh coriander",
+"Salt and red chilli",
+"Oil or ghee"
+],
+steps: [
+"Prepare soft dough using wheat flour and water.",
+"Mash boiled potatoes with spices.",
+"Fill a small dough ball with potato mixture.",
+"Roll gently into a paratha.",
+"Cook on a hot pan with oil or ghee.",
+"Serve with yogurt or pickle."
+]
+},
 
-        </div>
+{
+name: "Haleem",
+category: "Desi",
+meal: "Lunch",
+image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=900",
+description: "A hearty traditional dish made with lentils and meat.",
+time: "2 hours",
+ingredients: [
+"250g chicken or beef",
+"Mixed lentils",
+"Wheat or broken wheat",
+"Ginger garlic paste",
+"Haleem spices",
+"Fried onions and fresh coriander"
+],
+steps: [
+"Soak lentils and wheat.",
+"Cook meat with spices until tender.",
+"Boil lentils and wheat until soft.",
+"Combine and mash the mixture.",
+"Cook together until thick and creamy.",
+"Garnish with fried onions and coriander."
+]
+},
 
-        <p id="noResults" style="display:none; margin-top:25px;">
-            No recipes found. Try another search!
-        </p>
+{
+name: "Vegetable Samosa",
+category: "Desi",
+meal: "Breakfast",
+image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=900",
+description: "Crispy golden samosas filled with spicy potatoes.",
+time: "45 minutes",
+ingredients: [
+"2 cups flour",
+"3 potatoes",
+"Green peas",
+"Green chillies",
+"Salt and spices",
+"Oil"
+],
+steps: [
+"Prepare a firm dough with flour and water.",
+"Boil and mash potatoes.",
+"Mix potatoes with peas and spices.",
+"Shape dough into small cones.",
+"Fill with potato mixture and seal.",
+"Fry until golden and crispy."
+]
+},
 
-    </section>
+{
+name: "Cheese Pizza",
+category: "International",
+meal: "Dinner",
+image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=900",
+description: "Delicious cheesy pizza with a crispy crust.",
+time: "35 minutes",
+ingredients: [
+"Pizza dough",
+"Pizza sauce",
+"Mozzarella cheese",
+"Capsicum",
+"Onion",
+"Olives"
+],
+steps: [
+"Prepare or roll out pizza dough.",
+"Spread pizza sauce over the base.",
+"Add mozzarella cheese and vegetables.",
+"Bake until crust is golden and cheese melts.",
+"Slice and serve."
+]
+},
 
-    <!-- ABOUT -->
+{
+name: "Italian Pasta",
+category: "International",
+meal: "Lunch",
+image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=900",
+description: "Creamy pasta with a delicious homemade sauce.",
+time: "25 minutes",
+ingredients: [
+"2 cups pasta",
+"1 cup milk",
+"2 tablespoons butter",
+"2 tablespoons flour",
+"Cheese",
+"Salt and black pepper"
+],
+steps: [
+"Boil pasta until tender.",
+"Melt butter in a pan.",
+"Add flour and stir.",
+"Gradually add milk and mix until smooth.",
+"Add cheese and seasoning.",
+"Mix pasta with the sauce and serve."
+]
+},
 
-    <section class="about" id="about">
+{
+name: "Chocolate Cake",
+category: "Dessert",
+meal: "Dessert",
+image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900",
+description: "Soft chocolate cake for a sweet treat.",
+time: "45 minutes",
+ingredients: [
+"1 cup flour",
+"1 cup sugar",
+"2 eggs",
+"1/2 cup cocoa powder",
+"1/2 cup milk",
+"1 teaspoon baking powder"
+],
+steps: [
+"Mix flour, sugar, cocoa and baking powder.",
+"Add eggs and milk.",
+"Mix until smooth.",
+"Pour into a prepared cake pan.",
+"Bake until a toothpick comes out clean.",
+"Cool and decorate as desired."
+]
+}
 
-        <h2 class="section-title">About Tasty Kitchen</h2>
+];
 
-        <p>
-            Welcome to Tasty Kitchen! Our goal is to make cooking
-            simple, enjoyable and delicious for everyone.
-            Explore different recipes and discover new flavours
-            with us.
-        </p>
 
-    </section>
+/* DISPLAY RECIPES */
 
-    <!-- FOOTER -->
+let selectedCategory = "All";
 
-    <footer>
+function displayRecipes(list) {
 
-        <p>© 2026 Tasty Kitchen</p>
-        <p>Made with Love ❤️</p>
+    const container = document.getElementById("recipeContainer");
 
-    </footer>
+    container.innerHTML = "";
 
-    <!-- JAVASCRIPT -->
+    document.getElementById("noResults").style.display =
+        list.length === 0 ? "block" : "none";
 
-    <script>
+    list.forEach(function(recipe) {
 
-        function searchRecipes() {
+        const card = document.createElement("div");
 
-            let input = document.getElementById("searchInput")
-                .value.toLowerCase();
+        card.className = "card";
 
-            let cards = document.querySelectorAll(".card");
-            let count = 0;
+        const img = document.createElement("img");
+        img.src = recipe.image;
+        img.alt = recipe.name;
+        img.loading = "lazy";
 
-            cards.forEach(function(card) {
+        img.onerror = function() {
+            this.alt = recipe.name + " image unavailable";
+            this.style.background = "#eee";
+        };
 
-                let name = card.querySelector("h3")
-                    .innerText.toLowerCase();
+        const content = document.createElement("div");
+        content.className = "card-content";
 
-                if (name.includes(input)) {
-                    card.style.display = "block";
-                    count++;
-                } else {
-                    card.style.display = "none";
-                }
+        const title = document.createElement("h3");
+        title.textContent = recipe.name;
 
-            });
+        const description = document.createElement("p");
+        description.textContent = recipe.description;
 
-            document.getElementById("noResults").style.display =
-                count === 0 ? "block" : "none";
+        const tag = document.createElement("span");
+        tag.className = "tag";
+        tag.textContent = recipe.category + " • " + recipe.time;
 
-        }
+        const button = document.createElement("button");
+        button.className = "view-btn";
+        button.textContent = "View Recipe";
 
-        function filterCategory(category) {
+        button.addEventListener("click", function() {
+            openRecipe(recipe);
+        });
 
-            document.getElementById("searchInput").value = "";
+        content.append(title, description, tag, button);
+        card.append(img, content);
+        container.appendChild(card);
 
-            let cards = document.querySelectorAll(".card");
-            let count = 0;
+    });
 
-            cards.forEach(function(card) {
+}
 
-                let cardCategory = card.getAttribute("data-category");
 
-                if (category === "All" || cardCategory === category) {
-                    card.style.display = "block";
-                    count++;
-                } else {
-                    card.style.display = "none";
-                }
+/* SEARCH AND FILTER */
 
-            });
+function showRecipes() {
 
-            document.getElementById("noResults").style.display =
-                count === 0 ? "block" : "none";
+    const search = document.getElementById("searchInput")
+        .value.toLowerCase();
 
-            document.getElementById("recipes").scrollIntoView({
-                behavior: "smooth"
-            });
+    const filtered = recipes.filter(function(recipe) {
 
-        }
+        const matchesSearch =
+            recipe.name.toLowerCase().includes(search) ||
+            recipe.description.toLowerCase().includes(search);
 
-    </script>
+        const matchesCategory =
+            selectedCategory === "All" ||
+            recipe.category === selectedCategory ||
+            recipe.meal === selectedCategory;
+
+        return matchesSearch && matchesCategory;
+
+    });
+
+    displayRecipes(filtered);
+}
+
+
+function filterRecipes(category, button) {
+
+    selectedCategory = category;
+
+    document.querySelectorAll(".category-btn").forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    document.getElementById("searchInput").value = "";
+
+    showRecipes();
+
+    document.getElementById("recipes").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* RECIPE DETAILS */
+
+function openRecipe(recipe) {
+
+    let ingredientsHTML = "";
+    let stepsHTML = "";
+
+    recipe.ingredients.forEach(function(item) {
+        ingredientsHTML += "<li>" + item + "</li>";
+    });
+
+    recipe.steps.forEach(function(step) {
+        stepsHTML += "<li>" + step + "</li>";
+    });
+
+    document.getElementById("recipeDetails").innerHTML = `
+        <h2>${recipe.name}</h2>
+        <p><strong>Preparation time:</strong> ${recipe.time}</p>
+
+        <h3>Ingredients</h3>
+        <ul>${ingredientsHTML}</ul>
+
+        <h3>Cooking Method</h3>
+        <ol>${stepsHTML}</ol>
+    `;
+
+    document.getElementById("recipeModal").style.display = "block";
+
+}
+
+
+function closeRecipe() {
+    document.getElementById("recipeModal").style.display = "none";
+}
+
+
+window.onclick = function(event) {
+
+    const modal = document.getElementById("recipeModal");
+
+    if (event.target === modal) {
+        closeRecipe();
+    }
+
+};
+
+
+/* SHOW ALL RECIPES WHEN PAGE LOADS */
+
+displayRecipes(recipes);
+
+</script>
 
 </body>
-                </html>
+    </html>
     

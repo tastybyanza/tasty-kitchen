@@ -3,85 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tasty Kitchen | Recipes in English & Urdu</title>
+<title>Tasty Kitchen | Recipes</title>
 
 <style>
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background: #fffaf4;
+    background: #fffaf3;
     color: #333;
 }
 
 header {
-    background: #8b3a32;
+    background: #8b2e24;
     color: white;
-    padding: 22px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    padding: 22px 15px;
+    text-align: center;
 }
 
-.logo {
-    font-size: 27px;
-    font-weight: bold;
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+nav {
+    background: #64221c;
+    padding: 13px;
+    text-align: center;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
-    font-size: 15px;
-}
-
-nav a:hover {
-    color: #ffd6a5;
+    margin: 0 12px;
+    font-weight: bold;
 }
 
 .hero {
     text-align: center;
-    padding: 75px 20px;
-    background: linear-gradient(#0007, #0007),
-    url("https://images.unsplash.com/photo-1490645935967-10de6ba17061")
-    center/cover;
-    color: white;
+    padding: 55px 15px;
+    background: #f8dfc2;
 }
 
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+.hero h2 {
+    font-size: 32px;
+    color: #8b2e24;
+    margin-bottom: 12px;
 }
 
 .hero p {
-    font-size: 18px;
-    margin-bottom: 25px;
+    font-size: 17px;
+    margin-bottom: 20px;
 }
 
 .search-box {
     width: 90%;
-    max-width: 550px;
-    padding: 14px;
-    border: none;
-    border-radius: 25px;
+    max-width: 450px;
+    padding: 13px;
+    border: 1px solid #aaa;
+    border-radius: 7px;
     font-size: 16px;
 }
 
-.section {
-    padding: 45px 6%;
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 35px 18px;
 }
 
-.section h2 {
+.section-title {
     text-align: center;
-    color: #8b3a32;
+    color: #8b2e24;
+    font-size: 28px;
     margin-bottom: 25px;
-    font-size: 30px;
 }
 
 .categories {
@@ -93,148 +91,109 @@ nav a:hover {
 }
 
 .categories button {
-    background: #f0d5c5;
+    background: #8b2e24;
+    color: white;
     border: none;
-    padding: 11px 18px;
-    border-radius: 22px;
+    padding: 11px 17px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 14px;
 }
 
 .categories button:hover,
 .categories button.active {
-    background: #8b3a32;
-    color: white;
+    background: #d28b43;
 }
 
 .recipe-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
 }
 
 .recipe-card {
     background: white;
-    border-radius: 13px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 3px 12px #00000015;
-    transition: 0.3s;
-}
-
-.recipe-card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 3px 12px #00000018;
+    padding-bottom: 15px;
 }
 
 .recipe-card img {
     width: 100%;
     height: 185px;
     object-fit: cover;
+    display: block;
 }
 
-.recipe-info {
-    padding: 17px;
+.recipe-card h3 {
+    color: #8b2e24;
+    padding: 13px 13px 5px;
 }
 
-.recipe-info h3 {
-    color: #8b3a32;
-    margin-bottom: 7px;
+.recipe-card p {
+    padding: 4px 13px;
+    line-height: 1.5;
 }
 
-.recipe-info p {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 12px;
+.recipe-card details {
+    margin: 12px 13px 0;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
 }
 
-.recipe-info button {
-    background: #8b3a32;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 6px;
+.recipe-card summary {
+    color: #8b2e24;
     cursor: pointer;
+    font-weight: bold;
 }
 
-.recipe-info button:hover {
-    background: #642820;
+.recipe-card h4 {
+    margin-top: 12px;
+    color: #8b2e24;
+}
+
+.recipe-card ul,
+.recipe-card ol {
+    padding-left: 22px;
+    margin: 8px 0;
+    line-height: 1.7;
 }
 
 .no-results {
-    text-align: center;
-    grid-column: 1/-1;
-    padding: 30px;
-    color: #8b3a32;
-}
-
-.modal {
     display: none;
-    position: fixed;
-    z-index: 10;
-    inset: 0;
-    background: #000a;
-    overflow-y: auto;
-    padding: 25px 12px;
+    text-align: center;
+    padding: 30px;
+    color: #8b2e24;
+    font-size: 18px;
 }
 
-.modal-content {
-    background: white;
-    max-width: 750px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 12px;
-    position: relative;
-}
-
-.modal-content h2 {
-    color: #8b3a32;
-    margin-bottom: 8px;
-}
-
-.modal-content h3 {
-    margin: 20px 0 10px;
-    color: #8b3a32;
-}
-
-.modal-content p {
-    line-height: 1.7;
-    margin-bottom: 10px;
-}
-
-.modal-content li {
-    margin: 9px 0;
-    line-height: 1.6;
-}
-
-.close {
-    position: absolute;
-    right: 18px;
-    top: 12px;
-    font-size: 28px;
-    cursor: pointer;
-    color: #8b3a32;
+.about {
+    background: #f8dfc2;
+    text-align: center;
+    padding: 40px 20px;
+    line-height: 1.8;
 }
 
 footer {
-    background: #8b3a32;
+    background: #64221c;
     color: white;
     text-align: center;
-    padding: 25px;
-    margin-top: 35px;
+    padding: 20px;
 }
 
-@media(max-width:600px) {
-    header {
-        justify-content: center;
-        text-align: center;
+@media(max-width: 600px) {
+    header h1 {
+        font-size: 26px;
     }
 
-    .hero h1 {
-        font-size: 30px;
+    .hero h2 {
+        font-size: 25px;
     }
 
     nav a {
         display: inline-block;
-        margin: 5px;
+        margin: 6px;
     }
 }
 </style>
@@ -243,478 +202,442 @@ footer {
 <body>
 
 <header>
-    <div class="logo">🍽️ Tasty Kitchen</div>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#recipes">Recipes</a>
-        <a href="#about">About</a>
-    </nav>
+    <h1>🍽️ Tasty Kitchen</h1>
+    <p>Discover Delicious Recipes from Around the World</p>
 </header>
 
+<nav>
+    <a href="#home">Home</a>
+    <a href="#recipes">Recipes</a>
+    <a href="#about">About</a>
+</nav>
+
 <section class="hero" id="home">
-    <h1>Welcome to Tasty Kitchen</h1>
-    <p>Discover delicious recipes from Pakistan, Afghanistan, Turkey and around the world.</p>
+    <h2>Welcome to Tasty Kitchen!</h2>
+    <p>Explore Pakistani, Afghan, Turkish and International Food.</p>
+
     <input
         type="text"
-        class="search-box"
         id="searchInput"
-        placeholder="Search recipes in English or Urdu..."
-        oninput="searchRecipes()"
+        class="search-box"
+        placeholder="Search your favourite recipe..."
+        oninput="filterRecipes()"
     >
 </section>
 
-<section class="section" id="recipes">
-    <h2>Explore Our Recipes</h2>
+<section class="container" id="recipes">
+
+    <h2 class="section-title">Explore Our Recipes</h2>
 
     <div class="categories">
-        <button class="active" onclick="filterRecipes('All', this)">All Recipes</button>
-        <button onclick="filterRecipes('Pakistani', this)">Pakistani</button>
-        <button onclick="filterRecipes('Afghan', this)">Afghan</button>
-        <button onclick="filterRecipes('Turkish', this)">Turkish 🇹🇷</button>
-        <button onclick="filterRecipes('International', this)">International</button>
-        <button onclick="filterRecipes('Breakfast', this)">Breakfast</button>
-        <button onclick="filterRecipes('Dessert', this)">Desserts</button>
-        <button onclick="filterRecipes('Snacks', this)">Snacks</button>
+        <button class="active" onclick="selectCategory('all', this)">All Recipes</button>
+        <button onclick="selectCategory('Pakistani', this)">Pakistani</button>
+        <button onclick="selectCategory('Afghan', this)">Afghan</button>
+        <button onclick="selectCategory('Turkish', this)">Turkish 🇹🇷</button>
+        <button onclick="selectCategory('International', this)">International</button>
+        <button onclick="selectCategory('Desserts', this)">Desserts</button>
     </div>
 
-    <div class="recipe-grid" id="recipeGrid"></div>
+    <div class="recipe-grid" id="recipeGrid">
+
+        <!-- PAKISTANI RECIPES -->
+
+        <article class="recipe-card" data-category="Pakistani" data-name="chicken biryani">
+            <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?w=600" alt="Chicken Biryani">
+            <h3>Chicken Biryani</h3>
+            <p>پاکستانی چکن بریانی</p>
+            <p>Category: Pakistani | Time: 45 minutes</p>
+            <details>
+                <summary>View Recipe</summary>
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>Chicken - 500g</li>
+                    <li>Rice - 2 cups</li>
+                    <li>Onions - 2</li>
+                    <li>Tomatoes - 2</li>
+                    <li>Yogurt and biryani masala</li>
+                </ul>
+                <h4>Preparation</h4>
+                <ol>
+                    <li>Cook onions, tomatoes and chicken with spices.</li>
+                    <li>Boil rice separately.</li>
+                    <li>Make layers of chicken and rice.</li>
+                    <li>Cook on low heat for 15 minutes.</li>
+                </ol>
+            </details>
+        </article>
+
+        <article class="recipe-card" data-category="Pakistani" data-name="chicken karahi">
+            <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600" alt="Chicken Karahi">
+            <h3>Chicken Karahi</h3>
+            <p>چکن کڑاہی</p>
+            <p>Category: Pakistani | Time: 35 minutes</p>
+            <details>
+                <summary>View Recipe</summary>
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>Chicken - 500g</li>
+                    <li>Tomatoes - 4</li>
+                    <li>Ginger and garlic</li>
+                    <li>Green chillies</li>
+                    <li>Salt and spices</li>
+                </ul>
+                <h4>Preparation</h4>
+                <ol>
+                    <li>Heat oil in a pan.</li>
+                    <li>Add chicken and ginger garlic.</li>
+                    <li>Add tomatoes and spices.</li>
+                    <li>Cook until chicken is tender.</li>
+                    <li>Garnish with ginger and green chillies.</li>
+                </ol>
+            </details>
+        </article>
+
+        <article class="recipe-card" data-category="Pakistani" data-name="aloo paratha">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600" alt="Aloo Paratha">
+            <h3>Aloo Paratha</h3>
+            <p>آلو پراٹھا</p>
+            <p>Category: Pakistani | Time: 25 minutes</p>
+            <details>
+                <summary>View Recipe</summary>
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>Wheat flour - 2 cups</li>
+                    <li>Boiled potatoes - 2</li>
+                    <li>Green chillies</li>
+                    <li>Salt and spices</li>
+                    <li>Oil or butter</li>
+                </ul>
+                <h4>Preparation</h4>
+                <ol>
+                    <li>Prepare dough with wheat flour.</li>
+                    <li>Mash potatoes with spices.</li>
+                    <li>Fill dough with potato mixture.</li>
+                    <li>Roll and cook on a hot pan.</li>
+                </ol>
+            </details>
+        </article>
+
+        <!-- AFGHAN RECIPES -->
+
+        <article class="recipe-card" data-category="Afghan" data-name="afghani pulao">
+            <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600" alt="Afghani Pulao">
+            <h3>Afghani Pulao</h3>
+            <p>افغانی پلاؤ</p>
+            <p>Category: Afghan | Time: 60 minutes</p>
+            <details>
+                <summary>View Recipe</summary>
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>Rice - 2 cups</li>
+                    <li>Meat - 500g</li>
+                    <li>Carrots - 2</li>
+                    <li>Raisins</li>
+                    <li>Salt and spices</li>
+                </ul>
+                <h4>Preparation</h4>
+                <ol>
+                    <li>Cook meat until tender.</li>
+                    <li>Prepare rice using meat stock.</li>
+                    <li>Fry carrots and raisins separately.</li>
+                    <li>Serve the topping over the rice.</li>
+                </ol>
+            </details>
+        </article>
+
+        <article class="recipe-card" data-category="Afghan" data-name="chapli kebab">
+            <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?w=600" alt="Chapli Kebab">
+            <h3>Chapli Kebab</h3>
+            <p>چپلی کباب</p>
+            <p>Category: Afghan | Time: 35 minutes</p>
+            <details>
+                <summary>View Recipe</summary>
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>Minced meat - 500g</li>
+                    <li>Onion - 1</li>
+                    <li>Tomato - 1</li>
+                    <li>Green chillies</li>
+                    <li>Spices and coriander</li>
+                </ul>
+                <h4>Preparation</h4>
+                <ol>
+                    <li>Mix minced meat with all ingredients.</li>
+                    <li>Shape into flat kebabs.</li>
+                    <li>Cook in a pan until fully cooked.</li>
+                </ol>
+            </details>
+        </article>
+
+        <!-- TURKISH RECIPES -->
+
+        <article class="recipe-card" data-category="Turkish" data-name="doner kebab">
+            <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600" alt="Doner Kebab">
+            <h3>Doner Kebab</h3>
+            <p>ترکش ڈونر کباب</p>
+            <p>Category: Turkish | Time: 40 minutes</p>
+            <details>
+                <summary>View Recipe</summary>
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>Chicken - 500g</li>
+                    <li>Yogurt - 3 tablespoons</li>
+                    <li>Garlic - 2 cloves</li>
+                    <li>Black pepper and paprika</li>
+                    <li>Pita bread and salad</li>
+                </ul>
+                <h4>Preparation</h4>
+                <ol>
+                    <li>Marinate chicken with yogurt and spices.</li>
+                    <li>Cook chicken thoroughly in a pan.</li>
+                    <li>Slice the cooked chicken.</li>
+                    <li>Serve with bread and salad.</li>
+                </ol>
+            </details>
+        </article>
+
+        <article class="recipe-card" data-category="Turkish" data-name="menemen">
+            <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600" alt="Menemen">
+            <h3>Menemen</h3>
+            <p>ترکش انڈوں کی ڈش</p>
+            <p>Category: Turkish | Time: 20 minutes</p>
+            <details>
+                <summary>View Recipe</summary>
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>Eggs - 3</li>
+                    <li>Tomatoes - 2</li>
+                    <li>Green pepper - 1</li>
+                    <li>Olive oil</li>
+                    <li>Salt and black pepper</li>
+                </ul>
+                <h4>Preparation</h4>
+                <ol>
+                    <li>Heat oil in a pan.</li>
+                    <li>Cook chopped peppers and tomatoes.</li>
+                    <li>Add eggs and mix gently.</li>
+                    <li>Cook until eggs are done.</li>
+                </ol>
+            </details>
+        </article>
+
+        <article class="recipe-card" data-category="Turkish" data-name="baklava">
+            <img src="https://images.unsplash.com/photo-1519676867240-f03562e64548?w=600" alt="Baklava">
+            <h3>Turkish Baklava</h3>
+            <p>ترکش بیکلاوا</p>
+            <p>Category: Turkish | Time: 50 minutes</p>
+            <details>
+                <summary>View Recipe</summary>
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>Filo pastry sheets</li>
+                    <li>Chopped pistachios</li>
+                    <li>Butter</li>
+                    <li>Sugar - 1 cup</li>
+                    <li>Water and lemon juice</li>
+                </ul>
+                <h4>Preparation</h4>
+                <ol>
+                    <li>Layer pastry sheets with butter.</li>
+                    <li>Add chopped pistachios between layers.</li>
+                    <li>Cut into pieces and bake until golden.</li>
+                    <li>Pour prepared sugar syrup over it.</li>
+                </ol>
+            </details>
+        </article>
+
+        <article class="recipe-card" data-category="Turkish" data-name="lahmacun">
+            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=600" alt="Lahmacun">
+            <h3>Lahmacun</h3>
+            <p>ترکش لہماجون</p>
+            <p>Category: Turkish | Time: 35 minutes</p>
+            <details>
+                <summary>View Recipe</summary>
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>Flour dough</li>
+                    <li>Minced meat - 200g</li>
+                    <li>Tomatoes and onion</li>
+                    <li>Parsley</li>
+                    <li>Salt and spices</li>
+                </ul>
+                <h4>Preparation</h4>
+                <ol>
+                    <li>Mix meat with chopped vegetables and spices.</li>
+                    <li>Roll dough into thin circles.</li>
+                    <li>Spread the mixture over the dough.</li>
+                    <li>Bake until the base is cooked.</li>
+                </ol>
+            </details>
+        </article>
+
+        <!-- INTERNATIONAL RECIPES -->
+
+        <article class="recipe-card" data-category="International" data-name="italian pasta">
+            <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600" alt="Italian Pasta">
+            <h3>Italian Pasta</h3>
+            <p>اٹالین پاستا</p>
+            <p>Category: International | Time: 25 minutes</p>
+            <details>
+                <summary>View Recipe</summary>
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>Pasta - 2 cups</li>
+                    <li>Tomato sauce</li>
+                    <li>Garlic</li>
+                    <li>Olive oil</li>
+                    <li>Salt and herbs</li>
+                </ul>
+                <h4>Preparation</h4>
+                <ol>
+                    <li>Boil pasta until tender.</li>
+                    <li>Cook garlic in olive oil.</li>
+                    <li>Add tomato sauce and seasoning.</li>
+                    <li>Mix pasta with sauce and serve.</li>
+                </ol>
+            </details>
+        </article>
+
+        <article class="recipe-card" data-category="International" data-name="cheese pizza">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Cheese Pizza">
+            <h3>Cheese Pizza</h3>
+            <p>چیز پیزا</p>
+            <p>Category: International | Time: 30 minutes</p>
+            <details>
+                <summary>View Recipe</summary>
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>Pizza base</li>
+                    <li>Pizza sauce</li>
+                    <li>Mozzarella cheese</li>
+                    <li>Capsicum</li>
+                    <li>Olives</li>
+                </ul>
+                <h4>Preparation</h4>
+                <ol>
+                    <li>Spread pizza sauce on the base.</li>
+                    <li>Add cheese and toppings.</li>
+                    <li>Bake until the cheese melts and base is cooked.</li>
+                </ol>
+            </details>
+        </article>
+
+        <!-- DESSERTS -->
+
+        <article class="recipe-card" data-category="Desserts" data-name="kheer">
+            <img src="https://images.unsplash.com/photo-1579954115563-e72bf1381629?w=600" alt="Kheer">
+            <h3>Pakistani Kheer</h3>
+            <p>پاکستانی کھیر</p>
+            <p>Category: Desserts | Time: 40 minutes</p>
+            <details>
+                <summary>View Recipe</summary>
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>Milk - 1 litre</li>
+                    <li>Rice - 1/4 cup</li>
+                    <li>Sugar - 1/2 cup</li>
+                    <li>Cardamom</li>
+                    <li>Almonds and pistachios</li>
+                </ul>
+                <h4>Preparation</h4>
+                <ol>
+                    <li>Wash and soak the rice.</li>
+                    <li>Cook rice in milk on low heat.</li>
+                    <li>Add sugar and cardamom.</li>
+                    <li>Cook until creamy and garnish with nuts.</li>
+                </ol>
+            </details>
+        </article>
+
+        <article class="recipe-card" data-category="Desserts" data-name="chocolate cake">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600" alt="Chocolate Cake">
+            <h3>Chocolate Cake</h3>
+            <p>چاکلیٹ کیک</p>
+            <p>Category: Desserts | Time: 45 minutes</p>
+            <details>
+                <summary>View Recipe</summary>
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>Flour - 1 cup</li>
+                    <li>Sugar - 1 cup</li>
+                    <li>Cocoa powder - 1/4 cup</li>
+                    <li>Eggs - 2</li>
+                    <li>Milk and baking powder</li>
+                </ul>
+                <h4>Preparation</h4>
+                <ol>
+                    <li>Mix dry ingredients.</li>
+                    <li>Add eggs and milk.</li>
+                    <li>Pour into a prepared cake tin.</li>
+                    <li>Bake until fully cooked.</li>
+                </ol>
+            </details>
+        </article>
+
+    </div>
+
+    <p class="no-results" id="noResults">No recipes found. Try another search!</p>
+
 </section>
 
-<section class="section" id="about">
+<section class="about" id="about">
     <h2>About Tasty Kitchen</h2>
-    <p style="text-align:center; max-width:750px; margin:auto; line-height:1.8;">
-        Tasty Kitchen is a recipe website where you can discover delicious
-        dishes from different countries. Our recipes are available in both
-        English and Urdu, making cooking easier for everyone.
-        <br>
-        ٹیسٹی کچن ایک ایسی ویب سائٹ ہے جہاں آپ مختلف ممالک کے مزیدار کھانے
-        سیکھ سکتے ہیں۔ ہماری ترکیبیں اردو اور انگلش دونوں زبانوں میں ہیں۔
+    <p>
+        Welcome to Tasty Kitchen! Here you can explore delicious
+        recipes from Pakistan, Afghanistan, Turkey and around the world.
     </p>
+    <p>ہمارا مقصد آپ کو مزیدار کھانوں کی آسان ترکیبیں فراہم کرنا ہے۔</p>
 </section>
 
 <footer>
-    <p>© 2026 Tasty Kitchen | Made with ❤️ for Food Lovers</p>
+    <p>© 2026 Tasty Kitchen | Made with ❤️</p>
 </footer>
 
-<div class="modal" id="recipeModal">
-    <div class="modal-content">
-        <span class="close" onclick="closeRecipe()">&times;</span>
-        <div id="recipeDetails"></div>
-    </div>
-</div>
-
 <script>
-const recipes = [
+let selectedCategory = "all";
 
-{
-name:"Chicken Biryani",
-urdu:"چکن بریانی",
-category:"Pakistani",
-meal:"Lunch",
-time:"60 minutes",
-image:"https://images.unsplash.com/photo-1563379091339-03246963d96c",
-description:"Aromatic Pakistani rice dish with chicken and spices.",
-ingredients:[
-"Chicken - چکن",
-"Rice - چاول",
-"Yogurt - دہی",
-"Onion - پیاز",
-"Tomatoes - ٹماٹر",
-"Biryani spices - بریانی مصالحہ"
-],
-steps:[
-"Wash and soak the rice. - چاول دھو کر بھگو دیں۔",
-"Cook chicken with yogurt, onions and spices. - چکن کو دہی، پیاز اور مصالحے کے ساتھ پکائیں۔",
-"Layer rice and chicken masala. - چاول اور چکن کی تہہ لگائیں۔",
-"Cook on low heat until done. - ہلکی آنچ پر دم دیں۔"
-]
-},
+function selectCategory(category, button) {
+    selectedCategory = category;
 
-{
-name:"Chicken Karahi",
-urdu:"چکن کڑاہی",
-category:"Pakistani",
-meal:"Dinner",
-time:"40 minutes",
-image:"https://images.unsplash.com/photo-1603894584373-5ac82b2ae398",
-description:"Traditional spicy chicken karahi.",
-ingredients:["Chicken - چکن","Tomatoes - ٹماٹر","Ginger - ادرک","Garlic - لہسن","Green chilies - ہری مرچ","Karahi spices - کڑاہی مصالحہ"],
-steps:[
-"Heat oil and cook chicken. - تیل گرم کرکے چکن پکائیں۔",
-"Add tomatoes and spices. - ٹماٹر اور مصالحے شامل کریں۔",
-"Cook until the chicken is tender. - چکن گلنے تک پکائیں۔",
-"Add ginger and green chilies. - ادرک اور ہری مرچ شامل کریں۔"
-]
-},
+    document.querySelectorAll(".categories button").forEach(function(btn) {
+        btn.classList.remove("active");
+    });
 
-{
-name:"Vegetable Pulao",
-urdu:"سبزی پلاؤ",
-category:"Pakistani",
-meal:"Lunch",
-time:"35 minutes",
-image:"https://images.unsplash.com/photo-1512058564366-18510be2db19",
-description:"Delicious rice cooked with vegetables.",
-ingredients:["Rice - چاول","Carrots - گاجر","Peas - مٹر","Potatoes - آلو","Onion - پیاز","Whole spices - ثابت گرم مصالحہ"],
-steps:[
-"Fry onions and whole spices. - پیاز اور ثابت مصالحہ بھونیں۔",
-"Add vegetables. - سبزیاں شامل کریں۔",
-"Add rice and water. - چاول اور پانی ڈالیں۔",
-"Cook until rice is ready. - چاول پکنے تک دم دیں۔"
-]
-},
+    button.classList.add("active");
+    filterRecipes();
+}
 
-{
-name:"Beef Nihari",
-urdu:"بیف نہاری",
-category:"Pakistani",
-meal:"Dinner",
-time:"3 hours",
-image:"https://images.unsplash.com/photo-1547592180-85f173990554",
-description:"Slow-cooked traditional beef curry.",
-ingredients:["Beef - بیف","Onion - پیاز","Ginger garlic - ادرک لہسن","Nihari masala - نہاری مصالحہ","Wheat flour - آٹا"],
-steps:[
-"Cook beef with spices. - بیف کو مصالحوں کے ساتھ پکائیں۔",
-"Cook slowly until tender. - ہلکی آنچ پر گلنے تک پکائیں۔",
-"Add flour mixture to thicken the gravy. - شوربہ گاڑھا کرنے کے لیے آٹے کا مکسچر ڈالیں۔",
-"Serve with ginger and lemon. - ادرک اور لیموں کے ساتھ پیش کریں۔"
-]
-},
+function filterRecipes() {
+    const search = document.getElementById("searchInput").value.toLowerCase();
+    const cards = document.querySelectorAll(".recipe-card");
 
-{
-name:"Aloo Paratha",
-urdu:"آلو پراٹھا",
-category:"Pakistani",
-meal:"Breakfast",
-time:"30 minutes",
-image:"https://images.unsplash.com/photo-1565557623262-b51c2513a641",
-description:"Flatbread filled with spicy potato mixture.",
-ingredients:["Flour - آٹا","Potatoes - آلو","Green chilies - ہری مرچ","Coriander - دھنیا","Salt - نمک"],
-steps:[
-"Boil and mash potatoes. - آلو ابال کر میش کریں۔",
-"Mix spices into potatoes. - آلو میں مصالحے ملائیں۔",
-"Fill dough with potato mixture. - آٹے میں آلو بھریں۔",
-"Roll and cook on a hot pan. - بیل کر توے پر پکائیں۔"
-]
-},
+    let visibleCount = 0;
 
-{
-name:"Chicken Samosa",
-urdu:"چکن سموسہ",
-category:"Pakistani",
-meal:"Snacks",
-time:"40 minutes",
-image:"https://images.unsplash.com/photo-1601050690597-df0568f70950",
-description:"Crispy pastry filled with chicken.",
-ingredients:["Chicken - چکن","Flour - میدہ","Onion - پیاز","Spices - مصالحے","Oil - تیل"],
-steps:[
-"Cook chicken with spices. - چکن کو مصالحوں کے ساتھ پکائیں۔",
-"Prepare samosa pastry. - سموسے کی پٹی تیار کریں۔",
-"Fill pastry with chicken. - پٹی میں چکن بھریں۔",
-"Fry until golden. - سنہری ہونے تک تلیں۔"
-]
-},
+    cards.forEach(function(card) {
+        const category = card.dataset.category;
+        const name = card.dataset.name;
 
-{
-name:"Afghani Pulao",
-urdu:"افغانی پلاؤ",
-category:"Afghan",
-meal:"Lunch",
-time:"90 minutes",
-image:"https://images.unsplash.com/photo-1512058564366-18510be2db19",
-description:"Traditional Afghan rice with carrots and raisins.",
-ingredients:["Rice - چاول","Beef - بیف","Carrots - گاجر","Raisins - کشمش","Onions - پیاز","Spices - مصالحے"],
-steps:[
-"Cook meat with spices. - گوشت کو مصالحوں کے ساتھ پکائیں۔",
-"Prepare carrots and raisins. - گاجر اور کشمش تیار کریں۔",
-"Cook rice in meat stock. - گوشت کی یخنی میں چاول پکائیں۔",
-"Add toppings and steam. - اوپر گاجر کشمش ڈال کر دم دیں۔"
-]
-},
+        const matchesCategory =
+            selectedCategory === "all" ||
+            category === selectedCategory;
 
-{
-name:"Chapli Kebab",
-urdu:"چپلی کباب",
-category:"Afghan",
-meal:"Dinner",
-time:"35 minutes",
-image:"https://images.unsplash.com/photo-1529042410759-befb1204b468",
-description:"Popular spicy minced meat kebabs.",
-ingredients:["Minced beef - قیمہ","Tomato - ٹماٹر","Onion - پیاز","Coriander - دھنیا","Spices - مصالحے"],
-steps:[
-"Mix minced meat with spices. - قیمے میں مصالحے ملائیں۔",
-"Add chopped tomato and onion. - کٹا ہوا ٹماٹر اور پیاز شامل کریں۔",
-"Shape into flat kebabs. - چپٹے کباب بنائیں۔",
-"Cook on a pan until done. - توے پر اچھی طرح پکائیں۔"
-]
-},
+        const matchesSearch =
+            name.includes(search) ||
+            card.textContent.toLowerCase().includes(search);
 
-{
-name:"Mantu",
-urdu:"منتو",
-category:"Afghan",
-meal:"Dinner",
-time:"60 minutes",
-image:"https://images.unsplash.com/photo-1563245372-f21724e3856d",
-description:"Afghan steamed dumplings filled with meat.",
-ingredients:["Dough - آٹا","Minced meat - قیمہ","Onion - پیاز","Yogurt - دہی","Garlic - لہسن"],
-steps:[
-"Prepare dough and meat filling. - آٹا اور قیمہ تیار کریں۔",
-"Fill small dough pieces. - آٹے میں قیمہ بھریں۔",
-"Steam the dumplings. - منتو کو بھاپ میں پکائیں۔",
-"Serve with yogurt sauce. - دہی کی چٹنی کے ساتھ پیش کریں۔"
-]
-},
+        if (matchesCategory && matchesSearch) {
+            card.style.display = "block";
+            visibleCount++;
+        } else {
+            card.style.display = "none";
+        }
+    });
 
-/* TURKISH RECIPES */
+    document.getElementById("noResults").style.display =
+        visibleCount === 0 ? "block" : "none";
+}
+</script>
 
-{
-name:"Turkish Doner Kebab",
-urdu:"ترکش ڈونر کباب",
-category:"Turkish",
-meal:"Dinner",
-time:"50 minutes",
-image:"https://images.unsplash.com/photo-1529006557810-274b9b2fc783",
-description:"Popular Turkish meat dish served in bread or on a plate.",
-ingredients:["Chicken or beef - چکن یا بیف","Yogurt - دہی","Garlic - لہسن","Paprika - پاپریکا","Black pepper - کالی مرچ","Flatbread - روٹی"],
-steps:[
-"Mix meat with yogurt and spices. - گوشت کو دہی اور مصالحوں کے ساتھ ملائیں۔",
-"Marinate for at least 30 minutes. - کم از کم 30 منٹ میرینیٹ کریں۔",
-"Cook the meat thoroughly in a pan. - گوشت کو پین میں اچھی طرح پکائیں۔",
-"Serve with bread and salad. - روٹی اور سلاد کے ساتھ پیش کریں۔"
-]
-},
-
-{
-name:"Turkish Adana Kebab",
-urdu:"ترکش اڈانا کباب",
-category:"Turkish",
-meal:"Dinner",
-time:"40 minutes",
-image:"https://images.unsplash.com/photo-1544025162-d76694265947",
-description:"Traditional Turkish spicy minced meat kebab.",
-ingredients:["Minced lamb or beef - قیمہ","Red chili flakes - لال مرچ","Paprika - پاپریکا","Salt - نمک","Onion - پیاز"],
-steps:[
-"Mix minced meat with spices. - قیمے میں مصالحے ملائیں۔",
-"Shape the mixture into kebabs. - قیمے کو کباب کی شکل دیں۔",
-"Cook thoroughly on a grill or pan. - گرل یا پین میں اچھی طرح پکائیں۔",
-"Serve with salad and flatbread. - سلاد اور روٹی کے ساتھ پیش کریں۔"
-]
-},
-
-{
-name:"Turkish Lahmacun",
-urdu:"ترکش لہماجون",
-category:"Turkish",
-meal:"Lunch",
-time:"45 minutes",
-image:"https://images.unsplash.com/photo-1579751626657-72bc17010498",
-description:"Thin Turkish flatbread topped with seasoned minced meat.",
-ingredients:["Flour - میدہ","Minced beef - قیمہ","Tomato - ٹماٹر","Onion - پیاز","Parsley - پارسلے","Spices - مصالحے"],
-steps:[
-"Prepare soft flatbread dough. - نرم آٹا گوندھیں۔",
-"Mix minced meat with vegetables and spices. - قیمے میں سبزیاں اور مصالحے ملائیں۔",
-"Spread a thin layer over the dough. - آٹے پر قیمے کی باریک تہہ لگائیں۔",
-"Bake until cooked. - پکنے تک بیک کریں۔"
-]
-},
-
-{
-name:"Turkish Pide",
-urdu:"ترکش پیده",
-category:"Turkish",
-meal:"Lunch",
-time:"50 minutes",
-image:"https://images.unsplash.com/photo-1604382355076-af4b0eb60143",
-description:"Boat-shaped Turkish bread with cheese or meat topping.",
-ingredients:["Flour - میدہ","Yeast - خمیر","Cheese - پنیر","Minced meat - قیمہ","Egg - انڈا","Salt - نمک"],
-steps:[
-"Prepare dough and let it rise. - آٹا تیار کرکے پھولنے دیں۔",
-"Shape it like a boat. - اسے کشتی جیسی شکل دیں۔",
-"Add cheese or meat filling. - پنیر یا قیمہ ڈالیں۔",
-"Bake until golden. - سنہری ہونے تک بیک کریں۔"
-]
-},
-
-{
-name:"Menemen",
-urdu:"ترکش مینیمن",
-category:"Turkish",
-meal:"Breakfast",
-time:"20 minutes",
-image:"https://images.unsplash.com/photo-1525351484163-7529414344d8",
-description:"Turkish scrambled eggs with tomatoes and peppers.",
-ingredients:["Eggs - انڈے","Tomatoes - ٹماٹر","Green peppers - ہری مرچ","Butter - مکھن","Salt - نمک","Black pepper - کالی مرچ"],
-steps:[
-"Melt butter in a pan. - پین میں مکھن پگھلائیں۔",
-"Add chopped tomatoes and peppers. - کٹے ٹماٹر اور مرچ ڈالیں۔",
-"Cook until soft. - نرم ہونے تک پکائیں۔",
-"Add eggs and gently stir until cooked. - انڈے ڈال کر ہلائیں اور پکائیں۔"
-]
-},
-
-{
-name:"Turkish Manti",
-urdu:"ترکش مانتی",
-category:"Turkish",
-meal:"Dinner",
-time:"60 minutes",
-image:"https://images.unsplash.com/photo-1563245372-f21724e3856d",
-description:"Small Turkish dumplings served with yogurt and sauce.",
-ingredients:["Flour - میدہ","Minced meat - قیمہ","Onion - پیاز","Yogurt - دہی","Garlic - لہسن","Butter - مکھن"],
-steps:[
-"Prepare dough and filling. - آٹا اور قیمہ تیار کریں۔",
-"Make small filled dumplings. - چھوٹے بھرے ہوئے ڈمپلنگ بنائیں۔",
-"Boil until cooked. - پکنے تک ابالیں۔",
-"Serve with garlic yogurt and butter sauce. - لہسن والے دہی اور مکھن کی چٹنی کے ساتھ پیش کریں۔"
-]
-},
-
-{
-name:"Turkish Lentil Soup",
-urdu:"ترکش دال کا سوپ",
-category:"Turkish",
-meal:"Lunch",
-time:"35 minutes",
-image:"https://images.unsplash.com/photo-1547592180-85f173990554",
-description:"Warm and creamy Turkish red lentil soup.",
-ingredients:["Red lentils - لال مسور کی دال","Onion - پیاز","Carrot - گاجر","Butter - مکھن","Cumin - زیرہ","Lemon - لیموں"],
-steps:[
-"Wash red lentils. - لال دال دھو لیں۔",
-"Cook lentils with onion and carrot. - دال کو پیاز اور گاجر کے ساتھ پکائیں۔",
-"Blend until smooth. - بلینڈ کرکے ہموار کریں۔",
-"Add butter and lemon before serving. - پیش کرنے سے پہلے مکھن اور لیموں شامل کریں۔"
-]
-},
-
-{
-name:"Turkish Baklava",
-urdu:"ترکش بیکلاوا",
-category:"Turkish",
-meal:"Dessert",
-time:"60 minutes",
-image:"https://images.unsplash.com/photo-1519676867240-f03562e64548",
-description:"Sweet layered pastry with nuts and syrup.",
-ingredients:["Phyllo pastry - باریک پیسٹری شیٹس","Pistachios - پستہ","Butter - مکھن","Sugar - چینی","Water - پانی","Lemon juice - لیموں کا رس"],
-steps:[
-"Layer pastry sheets with melted butter. - پیسٹری شیٹس پر مکھن لگا کر تہیں بنائیں۔",
-"Add chopped pistachios. - کٹا ہوا پستہ ڈالیں۔",
-"Cut into small pieces and bake. - ٹکڑے کاٹ کر بیک کریں۔",
-"Pour cooled syrup over the baked pastry. - بیک ہونے کے بعد ٹھنڈا شیرہ ڈالیں۔"
-]
-},
-
-{
-name:"Turkish Kunafa",
-urdu:"ترکش کنافہ",
-category:"Turkish",
-meal:"Dessert",
-time:"40 minutes",
-image:"https://images.unsplash.com/photo-1578985545062-69928b1d9587",
-description:"Sweet crispy pastry dessert with soft cheese filling.",
-ingredients:["Kunafa pastry - کنافہ پیسٹری","Cheese - پنیر","Butter - مکھن","Sugar - چینی","Water - پانی","Pistachios - پستہ"],
-steps:[
-"Prepare sugar syrup. - چینی کا شیرہ تیار کریں۔",
-"Mix pastry with melted butter. - پیسٹری کو پگھلے مکھن میں ملائیں۔",
-"Add cheese filling between pastry layers. - پیسٹری کی تہوں کے درمیان پنیر ڈالیں۔",
-"Cook until golden and add syrup. - سنہری ہونے تک پکائیں اور شیرہ ڈالیں۔"
-]
-},
-
-{
-name:"Turkish Tea",
-urdu:"ترکش چائے",
-category:"Turkish",
-meal:"Breakfast",
-time:"15 minutes",
-image:"https://images.unsplash.com/photo-1544787219-7f47ccb76574",
-description:"Traditional Turkish black tea served in small glasses.",
-ingredients:["Black tea - کالی چائے","Water - پانی","Sugar - چینی (اختیاری)"],
-steps:[
-"Boil water in a kettle. - کیتلی میں پانی ابالیں۔",
-"Add tea leaves to the small teapot. - چھوٹی کیتلی میں چائے کی پتی ڈالیں۔",
-"Pour some hot water over the tea. - پتی پر تھوڑا گرم پانی ڈالیں۔",
-"Let it brew and serve in small glasses. - چائے دم پر رکھیں اور چھوٹے گلاس میں پیش کریں۔"
-]
-},
-
-/* INTERNATIONAL RECIPES */
-
-{
-name:"Italian Pasta",
-urdu:"اطالوی پاستا",
-category:"International",
-meal:"Dinner",
-time:"30 minutes",
-image:"https://images.unsplash.com/photo-1473093295043-cdd812d0e601",
-description:"Classic pasta with a delicious tomato sauce.",
-ingredients:["Pasta - پاستا","Tomatoes - ٹماٹر","Garlic - لہسن","Olive oil - زیتون کا تیل","Cheese - پنیر"],
-steps:[
-"Boil pasta until tender. - پاستا ابالیں۔",
-"Prepare tomato sauce. - ٹماٹر کی چٹنی تیار کریں۔",
-"Mix pasta with sauce. - پاستا کو چٹنی میں ملائیں۔",
-"Add cheese and serve. - پنیر ڈال کر پیش کریں۔"
-]
-},
-
-{
-name:"Cheese Pizza",
-urdu:"چیز پیزا",
-category:"International",
-meal:"Dinner",
-time:"45 minutes",
-image:"https://images.unsplash.com/photo-1513104890138-7c749659a591",
-description:"Delicious pizza topped with cheese and vegetables.",
-ingredients:["Pizza dough - پیزا آٹا","Pizza sauce - پیزا سوس","Mozzarella cheese - موزریلا پنیر","Capsicum - شملہ مرچ","Olives - زیتون"],
-steps:[
-"Prepare pizza dough. - پیزا کا آٹا تیار کریں۔",
-"Spread pizza sauce. - پیزا سوس لگائیں۔",
-"Add cheese and toppings. - پنیر اور دیگر اجزاء ڈالیں۔",
-"Bake until the crust is cooked. - کرسٹ پکنے تک بیک کریں۔"
-]
-},
-
-{
-name:"Chicken Burger",
-urdu:"چکن برگر",
-category:"International",
-meal:"Snacks",
-time:"30 minutes",
-image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
-description:"Juicy chicken burger with fresh vegetables.",
-ingredients:["Burger buns - برگر بن","Chicken patty - چکن پیٹی","Lettuce - سلاد کے پتے","Tomato - ٹماٹر","Mayonnaise - مایونیز"],
-steps:[
-"Cook the chicken patty thoroughly. - چکن پیٹی اچھی طرح پکائیں۔",
-"Toast the burger buns. - بن کو ہلکا سا سینکیں۔",
-"Add vegetables and mayonnaise. - سبزیاں اور مایونیز ڈالیں۔",
-"Assemble and serve. - برگر تیار کرکے پیش کریں۔"
-]
-},
-
-{
-name:"Chocolate Cake",
-urdu:"چاکلیٹ کیک",
-category:"International",
-meal:"Dessert",
-time:"50 minutes",
-image:"https://images.unsplash.com/photo-1578985545062-69928b1d9587",
-description:"Soft and rich chocolate cake.",
-ingredients:["Flour - میدہ","Cocoa powder - کوکو پاؤڈر","Sugar - چینی","Eggs - انڈے","Milk - دودھ","Baking powder - بیکنگ پاؤڈر"],
-steps:[
-"Mix dry ingredients. - خشک اجزاء ملائیں۔",
-"Add eggs and milk. - انڈے اور دودھ شامل کریں۔",
-"Pour batter into a cake pan. - مکسچر کیک پین میں ڈالیں۔",
-"Bake until cooked. - پکنے تک بیک کریں۔"
-]
-},
-
-{
-name:"Kheer",
-urdu:"کھیر",
-category:"Pakistani",
-meal:"Dessert",
-time:"50 minutes",
-image:"https://images.unsplash.com/photo-1488477181946-6428a0291777",
-description:"Traditional creamy rice pudding.",
-i
+</body>
+    </html>
     

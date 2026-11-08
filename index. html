@@ -169,13 +169,13 @@
         <div class="recipe-container">
 
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="Pizza">
-                <h3>Cheese Pizza</h3>
-                <p>A delicious homemade pizza with cheese and vegetables.</p>
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Pizza">
+                 <h3>Cheese Pizza</h3>
+                 <p>A delicious homemade pizza with cheese and vegetables.</p>
             </div>
 
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600" alt="Pasta">
+                <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600" alt="Pasta">
                 <h3>Italian Pasta</h3>
                 <p>Creamy and tasty pasta for your lunch or dinner.</p>
             </div>

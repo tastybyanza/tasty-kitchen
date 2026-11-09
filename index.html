@@ -3,305 +3,173 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tasty Kitchen | Pakistani Recipes</title>
+<title>Tasty Kitchen | Taste of Pakistan</title>
 
 <style>
-:root{
- --maroon:#721f32;
- --dark:#35131e;
- --gold:#d6a64f;
- --cream:#fff8ed;
- --white:#ffffff;
- --text:#392b27;
-}
-
 *{box-sizing:border-box;margin:0;padding:0}
-
 html{scroll-behavior:smooth}
-
 body{
- font-family:Georgia,serif;
- background:var(--cream);
- color:var(--text);
- line-height:1.6;
+  font-family:Arial,sans-serif;
+  background:#fffaf1;
+  color:#39251e;
 }
-
 header{
- background:var(--dark);
- color:white;
- padding:17px 7%;
- display:flex;
- justify-content:space-between;
- align-items:center;
- flex-wrap:wrap;
- gap:15px;
+  background:#641f2b;
+  color:white;
+  padding:17px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
 }
-
-.logo{
- font-size:27px;
- font-weight:bold;
- color:var(--gold);
-}
-
-nav{
- display:flex;
- flex-wrap:wrap;
- gap:18px;
-}
-
+.logo{font-size:25px;font-weight:bold}
+.logo span{color:#f3c879}
 nav a{
- color:white;
- text-decoration:none;
- font-size:15px;
+  color:white;text-decoration:none;
+  margin:0 9px;font-size:14px
 }
-
-nav a:hover{color:var(--gold)}
-
+nav a:hover{color:#f3c879}
 .hero{
- min-height:470px;
- display:flex;
- align-items:center;
- padding:65px 8%;
- color:white;
- background:
- linear-gradient(90deg,rgba(35,10,17,.88),rgba(35,10,17,.35)),
- url("https://loremflickr.com/1600/900/pakistani-food,traditional-food")
- center/cover;
+  min-height:470px;
+  padding:75px 8%;
+  display:flex;
+  align-items:center;
+  background:
+  linear-gradient(90deg,rgba(40,13,15,.88),rgba(40,13,15,.35)),
+  url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=85");
+  background-size:cover;
+  background-position:center;
+  color:white;
 }
-
-.hero-content{max-width:620px}
-
+.hero-content{max-width:650px}
+.hero small{
+  color:#f4cb7e;
+  letter-spacing:3px;font-weight:bold
+}
 .hero h1{
- font-size:clamp(38px,6vw,65px);
- line-height:1.15;
- margin-bottom:18px;
+  font-size:clamp(38px,6vw,65px);
+  margin:17px 0;line-height:1.1
 }
-
-.hero h1 span{color:var(--gold)}
-
-.hero p{
- font-size:18px;
- margin-bottom:25px;
+.hero h1 span{color:#f4cb7e}
+.hero p{font-size:17px;line-height:1.8;max-width:570px}
+.hero button{
+  margin-top:25px;padding:14px 27px;
+  background:#d9a64f;border:0;border-radius:30px;
+  color:#421923;font-weight:bold;cursor:pointer;
+  font-size:15px
 }
-
-.hero-btn{
- display:inline-block;
- background:var(--gold);
- color:var(--dark);
- padding:12px 25px;
- border-radius:30px;
- text-decoration:none;
- font-weight:bold;
-}
-
-.hero-btn:hover{background:white}
-
+.hero button:hover{background:white}
 .intro{
- text-align:center;
- padding:55px 20px 25px;
+  text-align:center;padding:55px 15px 25px
 }
-
-.intro h2{
- color:var(--maroon);
- font-size:34px;
- margin-bottom:10px;
+.eyebrow{
+  color:#a66a32;font-weight:bold;
+  letter-spacing:3px;font-size:12px
 }
-
-.intro p{max-width:700px;margin:auto}
-
-.stats{
- display:flex;
- justify-content:center;
- flex-wrap:wrap;
- gap:15px;
- padding:20px;
+.intro h2{font-size:34px;margin:12px 0;color:#641f2b}
+.intro p{color:#79665c;line-height:1.7}
+.culture{
+  margin:20px auto 45px;
+  max-width:950px;text-align:center;
+  background:#f7ead5;padding:23px;
+  border-radius:14px;border:1px solid #ead4ae
 }
-
-.stat{
- background:white;
- padding:15px 25px;
- border-radius:12px;
- text-align:center;
- box-shadow:0 3px 12px #00000010;
- min-width:130px;
+.culture h3{color:#641f2b;margin-bottom:8px}
+.culture p{line-height:1.7;color:#71594b}
+.tools{
+  max-width:1200px;margin:0 auto 25px;
+  padding:0 18px;
+  display:flex;gap:12px;flex-wrap:wrap;
+  justify-content:center
 }
-
-.stat strong{
- display:block;
- color:var(--maroon);
- font-size:25px;
+.tools input{
+  width:min(400px,100%);padding:14px 17px;
+  border:1px solid #ddc7a8;border-radius:30px;
+  font-size:15px;outline:none;background:white
 }
-
+.tools select{
+  padding:13px 18px;border:1px solid #ddc7a8;
+  border-radius:30px;background:white;color:#492c24
+}
 .section-title{
- text-align:center;
- color:var(--maroon);
- font-size:32px;
- margin:35px 0 20px;
+  text-align:center;color:#641f2b;
+  font-size:29px;margin:30px 0 8px
 }
-
-.filters{
- max-width:1100px;
- margin:20px auto;
- padding:0 15px;
- display:flex;
- flex-wrap:wrap;
- justify-content:center;
- gap:10px;
-}
-
-.filters button{
- border:1px solid var(--maroon);
- background:white;
- color:var(--maroon);
- padding:9px 17px;
- border-radius:25px;
- cursor:pointer;
- font-size:14px;
-}
-
-.filters button.active,
-.filters button:hover{
- background:var(--maroon);
- color:white;
-}
-
-.search-box{
- display:block;
- width:min(600px,90%);
- margin:25px auto;
- padding:14px 18px;
- border:1px solid #d7c3ad;
- border-radius:30px;
- font-size:16px;
- outline:none;
-}
-
-.search-box:focus{border-color:var(--maroon)}
-
+.section-sub{text-align:center;color:#806c60;margin-bottom:25px}
 .recipe-grid{
- width:min(1250px,94%);
- margin:30px auto 65px;
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(265px,1fr));
- gap:24px;
+  max-width:1250px;margin:auto;padding:0 18px 65px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
+  gap:23px
 }
-
 .recipe-card{
- background:white;
- border-radius:17px;
- overflow:hidden;
- box-shadow:0 5px 20px #44202012;
- transition:.25s;
- border:1px solid #f0e4d6;
+  background:white;border-radius:17px;overflow:hidden;
+  border:1px solid #f0e1cd;
+  box-shadow:0 5px 18px rgba(70,35,20,.08);
+  transition:.25s
 }
-
 .recipe-card:hover{
- transform:translateY(-5px);
- box-shadow:0 10px 25px #44202020;
+  transform:translateY(-6px);
+  box-shadow:0 12px 25px rgba(70,35,20,.15)
 }
-
-.recipe-card img{
- width:100%;
- height:205px;
- object-fit:cover;
- display:block;
- background:#eadbc9;
+.photo{
+  height:190px;position:relative;
+  background:linear-gradient(135deg,#7b3330,#d5a65c);
+  overflow:hidden
 }
-
-.card-content{padding:18px}
-
-.region{
- display:inline-block;
- background:#f7ead5;
- color:var(--maroon);
- padding:4px 10px;
- border-radius:20px;
- font-size:12px;
- margin-bottom:9px;
+.photo img{
+  width:100%;height:100%;object-fit:cover;
+  display:block
 }
-
-.recipe-card h3{
- color:var(--maroon);
- font-size:22px;
- line-height:1.3;
- margin-bottom:8px;
+.photo .fallback{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:65px;color:white;
+  background:linear-gradient(135deg,#6c2630,#d6a85e)
 }
-
-.recipe-info{
- color:#78675e;
- font-size:13px;
- margin:10px 0;
+.tag{
+  position:absolute;top:12px;left:12px;
+  background:#fff7e9;color:#641f2b;
+  padding:6px 11px;border-radius:20px;
+  font-size:11px;font-weight:bold
 }
-
-.recipe-card details{
- border-top:1px solid #eee1d4;
- margin-top:12px;
- padding-top:10px;
+.recipe-info{padding:18px}
+.recipe-info h3{color:#641f2b;font-size:19px;margin-bottom:7px}
+.recipe-info .urdu{color:#a46a36;font-size:14px;margin-bottom:10px}
+.recipe-info p{font-size:13px;color:#79685e;line-height:1.6}
+.meta{
+  display:flex;justify-content:space-between;
+  margin:13px 0;color:#906c45;font-size:12px
 }
-
-.recipe-card summary{
- color:var(--maroon);
- font-weight:bold;
- cursor:pointer;
- padding:5px 0;
+details{
+  border-top:1px solid #f0e5d7;
+  padding-top:12px;margin-top:10px
 }
-
-.recipe-card h4{
- color:#8c5425;
- margin:12px 0 5px;
+summary{
+  color:#782b36;font-weight:bold;
+  cursor:pointer;font-size:14px
 }
-
-.recipe-card ul,.recipe-card ol{
- padding-left:20px;
- font-size:14px;
-}
-
-.recipe-card li{margin:5px 0}
-
-.urdu{
- direction:rtl;
- text-align:right;
- font-family:Arial,sans-serif;
- line-height:1.9;
-}
-
-.no-result{
- display:none;
- text-align:center;
- padding:30px;
- color:var(--maroon);
- grid-column:1/-1;
-}
-
-.about{
- background:#f1e4d2;
- padding:55px 8%;
- text-align:center;
-}
-
-.about h2{
- color:var(--maroon);
- font-size:32px;
- margin-bottom:12px;
-}
-
-.about p{max-width:800px;margin:auto}
-
+.recipe-detail{padding-top:12px;font-size:13px;line-height:1.7}
+.recipe-detail h4{color:#8c4d2d;margin:10px 0 4px}
+.recipe-detail ul,.recipe-detail ol{padding-left:20px}
+.recipe-detail li{margin-bottom:5px}
 footer{
- background:var(--dark);
- color:white;
- text-align:center;
- padding:30px 15px;
+  background:#4b1923;color:#f8e9d4;
+  text-align:center;padding:35px 15px;
+  line-height:1.9
 }
-
-footer strong{color:var(--gold)}
-
+footer h2{color:#efc477;margin-bottom:8px}
+.no-result{
+  grid-column:1/-1;text-align:center;
+  padding:40px;color:#7b5b4b
+}
 @media(max-width:600px){
- header{justify-content:center;text-align:center}
- nav{justify-content:center}
- .hero{min-height:400px;padding:45px 7%}
- .hero p{font-size:16px}
- .intro h2,.section-title{font-size:27px}
+  header{justify-content:center;text-align:center}
+  nav{width:100%}
+  nav a{margin:0 6px}
+  .hero{min-height:420px;padding:55px 7%}
+  .intro h2{font-size:28px}
 }
 </style>
 </head>
@@ -309,473 +177,142 @@ footer strong{color:var(--gold)}
 <body>
 
 <header>
- <div class="logo">🍲 Tasty Kitchen</div>
- <nav>
-  <a href="#home">Home</a>
-  <a href="#recipes">Recipes</a>
-  <a href="#about">About Us</a>
- </nav>
+  <div class="logo">🍲 Tasty <span>Kitchen</span></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#recipes">Recipes</a>
+    <a href="#about">Our Culture</a>
+  </nav>
 </header>
 
 <section class="hero" id="home">
- <div class="hero-content">
-  <h1>Discover the Taste of <span>Pakistan!</span></h1>
+  <div class="hero-content">
+    <small>WELCOME TO TASTY KITCHEN</small>
+    <h1>Discover the <span>Real Taste</span> of Pakistan</h1>
+    <p>
+      From the spicy streets of Lahore to the traditional flavours
+      of Balochistan, explore Pakistan's beautiful food culture
+      with delicious recipes in English and Urdu.
+    </p>
+    <button onclick="document.getElementById('recipes').scrollIntoView()">
+      Explore 20 Pakistani Recipes →
+    </button>
+  </div>
+</section>
+
+<section class="intro" id="about">
+  <div class="eyebrow">A JOURNEY THROUGH PAKISTAN</div>
+  <h2>Our Food, Our Heritage ❤️</h2>
+  <p>Every dish tells a story. Every flavour carries a tradition.</p>
+</section>
+
+<div class="culture">
+  <h3>Proud of our beautiful culture and cuisines.</h3>
   <p>
-   Explore the rich flavours, beautiful traditions and delicious
-   cuisines of Pakistan. From Punjab to Balochistan,
-   discover recipes that bring families together.
+    Pakistan is home to diverse traditions and unforgettable flavours.
+    Discover the special dishes of Punjab, Sindh, Khyber Pakhtunkhwa,
+    Balochistan, Gilgit-Baltistan and Kashmir.
   </p>
-  <a class="hero-btn" href="#recipes">Explore Recipes ↓</a>
- </div>
-</section>
-
-<section class="intro">
- <h2>Welcome to Tasty Kitchen</h2>
- <p>
-  Proud of our beautiful culture and cuisines.
-  Discover traditional Pakistani dishes with easy ingredients
-  and step-by-step cooking instructions in English and Urdu.
- </p>
-</section>
-
-<div class="stats">
- <div class="stat"><strong>20+</strong>Traditional Recipes</div>
- <div class="stat"><strong>5+</strong>Regions</div>
- <div class="stat"><strong>2</strong>Languages</div>
 </div>
 
-<h2 class="section-title" id="recipes">🍽️ Explore Pakistani Recipes</h2>
+<h2 class="section-title" id="recipes">Explore Pakistani Recipes</h2>
+<p class="section-sub">20 traditional favourites from across Pakistan</p>
 
-<input
- class="search-box"
- type="text"
- id="searchInput"
- placeholder="Search recipes... e.g. Biryani, Karahi, Sajji"
->
-
-<div class="filters">
- <button class="active" onclick="filterRecipes('All',this)">All Recipes</button>
- <button onclick="filterRecipes('Punjab',this)">Punjab</button>
- <button onclick="filterRecipes('Sindh',this)">Sindh</button>
- <button onclick="filterRecipes('KPK',this)">Khyber Pakhtunkhwa</button>
- <button onclick="filterRecipes('Balochistan',this)">Balochistan</button>
- <button onclick="filterRecipes('North',this)">Northern Areas</button>
+<div class="tools">
+  <input id="search" type="search" placeholder="🔍 Search your favourite food...">
+  <select id="region">
+    <option value="all">All Regions</option>
+    <option>Punjab</option>
+    <option>Sindh</option>
+    <option>Khyber Pakhtunkhwa</option>
+    <option>Balochistan</option>
+    <option>Gilgit-Baltistan</option>
+    <option>Kashmir</option>
+  </select>
 </div>
 
-<main class="recipe-grid" id="recipeGrid">
+<div class="recipe-grid" id="recipeGrid">
 
-<!-- 1 -->
+<!-- PUNJAB -->
 <article class="recipe-card" data-region="Punjab">
-<img src="https://loremflickr.com/640/420/sarson,saag" alt="Sarson ka Saag">
-<div class="card-content">
-<span class="region">Punjab</span>
-<h3>1. Sarson Ka Saag & Makki Roti</h3>
-<p>A famous traditional Punjabi winter meal.</p>
-<div class="recipe-info">⏱ 60 min | 🍽 4 servings</div>
-<details>
-<summary>View Full Recipe</summary>
-<h4>Ingredients (English)</h4>
-<ul>
-<li>Mustard leaves – 500 g</li>
-<li>Spinach – 200 g</li>
-<li>Bathua – 100 g</li>
-<li>Green chillies – 3</li>
-<li>Ginger and garlic – 1 tbsp</li>
-<li>Corn flour – 2 tbsp</li>
-<li>Butter or ghee – 3 tbsp</li>
-<li>Salt – to taste</li>
-</ul>
-<h4 class="urdu">اجزاء (اردو)</h4>
-<ul class="urdu">
-<li>سرسوں کا ساگ – آدھا کلو</li>
-<li>پالک – 200 گرام</li>
-<li>بتھوا – 100 گرام</li>
-<li>ہری مرچیں – 3</li>
-<li>ادرک لہسن – ایک کھانے کا چمچ</li>
-<li>مکئی کا آٹا – 2 چمچ</li>
-<li>مکھن یا گھی – 3 چمچ</li>
-<li>نمک حسب ذائقہ</li>
-</ul>
-<h4>Cooking Method (English)</h4>
-<ol>
-<li>Wash and chop all green leaves.</li>
-<li>Boil them with chillies, ginger, garlic and salt until soft.</li>
-<li>Blend or mash the cooked greens.</li>
-<li>Add corn flour and cook until thick.</li>
-<li>Prepare a butter and garlic tempering and pour over the saag.</li>
-<li>Serve hot with makki ki roti.</li>
-</ol>
-<h4 class="urdu">ترکیب (اردو)</h4>
-<ol class="urdu">
-<li>تمام ساگ اچھی طرح دھو کر کاٹ لیں۔</li>
-<li>ہری مرچ، ادرک، لہسن اور نمک کے ساتھ نرم ہونے تک پکائیں۔</li>
-<li>پکے ہوئے ساگ کو بلینڈ یا اچھی طرح گھوٹ لیں۔</li>
-<li>مکئی کا آٹا شامل کرکے گاڑھا ہونے تک پکائیں۔</li>
-<li>مکھن اور لہسن کا تڑکا لگا دیں۔</li>
-<li>مکئی کی روٹی کے ساتھ گرم گرم پیش کریں۔</li>
-</ol>
-</details>
-</div>
-</article>
+<div class="photo"><div class="fallback">🥬</div><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80" alt="Saag" onerror="this.style.display='none'"></div>
+<div class="recipe-info">
+<span class="tag">Punjab</span><h3>Sarson Ka Saag</h3><div class="urdu">سرسوں کا ساگ اور مکئی کی روٹی</div>
+<p>A traditional winter favourite served with makki ki roti.</p>
+<div class="meta"><span>⏱ 60 min</span><span>🍽 4 servings</span></div>
+<details><summary>View Recipe / ترکیب دیکھیں</summary><div class="recipe-detail">
+<h4>Ingredients / اجزاء</h4><ul>
+<li>Mustard leaves 500g / سرسوں کے پتے</li><li>Spinach 250g / پالک</li><li>Green chillies 3 / ہری مرچ</li><li>Ginger 1 tbsp / ادرک</li><li>Corn flour 2 tbsp / مکئی کا آٹا</li><li>Butter 2 tbsp / مکھن</li></ul>
+<h4>Method / طریقہ</h4><ol>
+<li>Wash and chop the greens. سبزیاں دھو کر کاٹ لیں۔</li>
+<li>Cook with ginger, chillies and a little water until soft. نرم ہونے تک پکائیں۔</li>
+<li>Mash, add corn flour and cook until thick. مکئی کا آٹا ڈال کر گاڑھا ہونے تک پکائیں۔</li>
+<li>Finish with butter and serve with makki roti. مکھن ڈال کر مکئی کی روٹی کے ساتھ پیش کریں۔</li></ol></div></details>
+</div></article>
 
-<!-- 2 -->
 <article class="recipe-card" data-region="Punjab">
-<img src="https://loremflickr.com/640/420/chickpeas,curry" alt="Chikar Cholay">
-<div class="card-content">
-<span class="region">Punjab</span>
-<h3>2. Lahori Chikar Cholay</h3>
-<p>A popular and spicy Lahori street-food dish.</p>
-<div class="recipe-info">⏱ 50 min | 🍽 4 servings</div>
-<details>
-<summary>View Full Recipe</summary>
-<h4>Ingredients (English)</h4>
-<ul>
-<li>White chickpeas – 2 cups, boiled</li>
-<li>Onions – 2</li><li>Tomatoes – 2</li>
-<li>Ginger garlic paste – 1 tbsp</li>
-<li>Red chilli powder – 1 tsp</li>
-<li>Coriander powder – 1 tsp</li>
-<li>Turmeric – ½ tsp</li>
-<li>Oil and salt – as needed</li>
-</ul>
-<h4 class="urdu">اجزاء (اردو)</h4>
-<ul class="urdu">
-<li>سفید چنے – 2 کپ، ابلے ہوئے</li>
-<li>پیاز – 2 عدد</li><li>ٹماٹر – 2 عدد</li>
-<li>ادرک لہسن پیسٹ – ایک چمچ</li>
-<li>لال مرچ – ایک چائے کا چمچ</li>
-<li>دھنیا پاؤڈر – ایک چمچ</li>
-<li>ہلدی – آدھا چمچ</li>
-<li>تیل اور نمک حسب ضرورت</li>
-</ul>
-<h4>Cooking Method (English)</h4>
-<ol>
-<li>Heat oil and fry chopped onions until golden.</li>
-<li>Add ginger garlic paste and tomatoes.</li>
-<li>Add spices and cook until the oil separates.</li>
-<li>Add boiled chickpeas and some water.</li>
-<li>Mash a few chickpeas to make the gravy thick.</li>
-<li>Simmer and serve with naan.</li>
-</ol>
-<h4 class="urdu">ترکیب (اردو)</h4>
-<ol class="urdu">
-<li>تیل گرم کرکے پیاز سنہری کریں۔</li>
-<li>ادرک لہسن اور ٹماٹر شامل کریں۔</li>
-<li>مصالحے ڈال کر اچھی طرح بھونیں۔</li>
-<li>ابلے ہوئے چنے اور تھوڑا پانی شامل کریں۔</li>
-<li>چند چنے مسل دیں تاکہ سالن گاڑھا ہو جائے۔</li>
-<li>ہلکی آنچ پر پکائیں اور نان کے ساتھ پیش کریں۔</li>
-</ol>
-</details>
-</div>
-</article>
+<div class="photo"><div class="fallback">🍛</div><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=700&q=80" alt="Cholay" onerror="this.style.display='none'"></div>
+<div class="recipe-info"><span class="tag">Punjab</span><h3>Lahori Chikar Cholay</h3><div class="urdu">لاہوری چکر چھولے</div><p>Thick, spicy chickpea curry famous in Lahore.</p><div class="meta"><span>⏱ 50 min</span><span>🍽 4 servings</span></div>
+<details><summary>View Recipe / ترکیب دیکھیں</summary><div class="recipe-detail"><h4>Ingredients / اجزاء</h4><ul><li>Boiled chickpeas 2 cups / ابلے چنے</li><li>Onion 1 / پیاز</li><li>Tomatoes 2 / ٹماٹر</li><li>Ginger garlic paste 1 tbsp / ادرک لہسن</li><li>Chana masala 2 tbsp / چنا مصالحہ</li><li>Oil 3 tbsp / تیل</li></ul><h4>Method / طریقہ</h4><ol><li>Fry onion until golden. پیاز سنہری کریں۔</li><li>Add tomatoes and spices. ٹماٹر اور مصالحے ڈالیں۔</li><li>Add chickpeas and water; simmer until thick. چنے ڈال کر گاڑھا ہونے تک پکائیں۔</li><li>Garnish with ginger and serve. ادرک ڈال کر پیش کریں۔</li></ol></div></details>
+</div></article>
 
-<!-- 3 -->
 <article class="recipe-card" data-region="Punjab">
-<img src="https://loremflickr.com/640/420/chicken,karahi" alt="Chicken Karahi">
-<div class="card-content">
-<span class="region">Punjab</span>
-<h3>3. Pakistani Chicken Karahi</h3>
-<p>A classic tomato-based Pakistani favourite.</p>
-<div class="recipe-info">⏱ 45 min | 🍽 4 servings</div>
-<details>
-<summary>View Full Recipe</summary>
-<h4>Ingredients (English)</h4>
-<ul>
-<li>Chicken – 1 kg</li><li>Tomatoes – 4</li>
-<li>Ginger garlic paste – 2 tbsp</li>
-<li>Green chillies – 4</li><li>Yoghurt – ½ cup</li>
-<li>Red chilli powder – 1 tsp</li>
-<li>Black pepper – ½ tsp</li>
-<li>Garam masala – ½ tsp</li>
-<li>Oil, salt, ginger and coriander</li>
-</ul>
-<h4 class="urdu">اجزاء (اردو)</h4>
-<ul class="urdu">
-<li>چکن – ایک کلو</li><li>ٹماٹر – 4 عدد</li>
-<li>ادرک لہسن پیسٹ – 2 چمچ</li>
-<li>ہری مرچیں – 4</li><li>دہی – آدھا کپ</li>
-<li>لال مرچ – ایک چمچ</li>
-<li>کالی مرچ – آدھا چمچ</li>
-<li>گرم مصالحہ – آدھا چمچ</li>
-<li>تیل، نمک، ادرک اور دھنیا</li>
-</ul>
-<h4>Cooking Method (English)</h4>
-<ol>
-<li>Heat oil and add chicken.</li>
-<li>Cook until the chicken changes colour.</li>
-<li>Add ginger garlic paste and tomatoes.</li>
-<li>Add spices, yoghurt and salt.</li>
-<li>Cook until chicken is fully cooked and oil separates.</li>
-<li>Garnish with ginger, green chillies and coriander.</li>
-</ol>
-<h4 class="urdu">ترکیب (اردو)</h4>
-<ol class="urdu">
-<li>کڑاہی میں تیل گرم کرکے چکن ڈالیں۔</li>
-<li>چکن کا رنگ تبدیل ہونے تک پکائیں۔</li>
-<li>ادرک لہسن اور ٹماٹر شامل کریں۔</li>
-<li>مصالحے، دہی اور نمک ڈالیں۔</li>
-<li>چکن مکمل پکنے اور تیل الگ ہونے تک پکائیں۔</li>
-<li>ادرک، ہری مرچ اور ہرا دھنیا ڈال کر پیش کریں۔</li>
-</ol>
-</details>
-</div>
-</article>
+<div class="photo"><div class="fallback">🍗</div><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=700&q=80" alt="Chicken karahi" onerror="this.style.display='none'"></div>
+<div class="recipe-info"><span class="tag">Punjab</span><h3>Chicken Karahi</h3><div class="urdu">چکن کڑاہی</div><p>Classic Pakistani chicken cooked with tomatoes and spices.</p><div class="meta"><span>⏱ 40 min</span><span>🍽 4 servings</span></div>
+<details><summary>View Recipe / ترکیب دیکھیں</summary><div class="recipe-detail"><h4>Ingredients / اجزاء</h4><ul><li>Chicken 1 kg / چکن</li><li>Tomatoes 4 / ٹماٹر</li><li>Ginger garlic paste 2 tbsp / ادرک لہسن</li><li>Green chillies 4 / ہری مرچ</li><li>Red chilli 1 tsp / لال مرچ</li><li>Oil ½ cup / تیل</li></ul><h4>Method / طریقہ</h4><ol><li>Heat oil and cook chicken. تیل میں چکن پکائیں۔</li><li>Add ginger garlic and tomatoes. ادرک لہسن اور ٹماٹر شامل کریں۔</li><li>Add spices and cook until chicken is fully cooked. مصالحے ڈال کر مکمل پکائیں۔</li><li>Garnish with ginger and chillies. ادرک اور مرچ سے سجائیں۔</li></ol></div></details>
+</div></article>
 
-<!-- 4 -->
 <article class="recipe-card" data-region="Punjab">
-<img src="https://loremflickr.com/640/420/nihari,meat" alt="Beef Nihari">
-<div class="card-content">
-<span class="region">Punjab</span>
-<h3>4. Traditional Beef Nihari</h3>
-<p>A rich and slow-cooked Pakistani breakfast dish.</p>
-<div class="recipe-info">⏱ 3 hours | 🍽 5 servings</div>
-<details>
-<summary>View Full Recipe</summary>
-<h4>Ingredients (English)</h4>
-<ul>
-<li>Beef – 1 kg</li><li>Onions – 2</li>
-<li>Ginger garlic paste – 2 tbsp</li>
-<li>Nihari masala – 3 tbsp</li>
-<li>Wheat flour – 3 tbsp</li>
-<li>Oil or ghee – ½ cup</li>
-<li>Salt and water</li>
-<li>Ginger, lemon and coriander for garnish</li>
-</ul>
-<h4 class="urdu">اجزاء (اردو)</h4>
-<ul class="urdu">
-<li>بیف – ایک کلو</li><li>پیاز – 2 عدد</li>
-<li>ادرک لہسن پیسٹ – 2 چمچ</li>
-<li>نہاری مصالحہ – 3 چمچ</li>
-<li>آٹا – 3 چمچ</li>
-<li>تیل یا گھی – آدھا کپ</li>
-<li>نمک اور پانی</li>
-<li>ادرک، لیموں اور ہرا دھنیا</li>
-</ul>
-<h4>Cooking Method (English)</h4>
-<ol>
-<li>Fry onions in oil until golden.</li>
-<li>Add beef and ginger garlic paste.</li>
-<li>Add nihari masala and water.</li>
-<li>Cover and cook gently until the beef is tender.</li>
-<li>Mix flour with water and add gradually.</li>
-<li>Simmer until the gravy thickens. Garnish and serve.</li>
-</ol>
-<h4 class="urdu">ترکیب (اردو)</h4>
-<ol class="urdu">
-<li>تیل میں پیاز سنہری کریں۔</li>
-<li>بیف اور ادرک لہسن شامل کریں۔</li>
-<li>نہاری مصالحہ اور پانی ڈالیں۔</li>
-<li>ڈھک کر ہلکی آنچ پر گوشت گلنے تک پکائیں۔</li>
-<li>آٹے کو پانی میں گھول کر آہستہ آہستہ شامل کریں۔</li>
-<li>گاڑھا ہونے پر ادرک اور ہرا دھنیا ڈال کر پیش کریں۔</li>
-</ol>
-</details>
-</div>
-</article>
+<div class="photo"><div class="fallback">🥘</div><img src="https://images.unsplash.com/photo-1545247181-516773cae754?auto=format&fit=crop&w=700&q=80" alt="Nihari" onerror="this.style.display='none'"></div>
+<div class="recipe-info"><span class="tag">Punjab</span><h3>Beef Nihari</h3><div class="urdu">بیف نہاری</div><p>Slow-cooked, rich and aromatic traditional curry.</p><div class="meta"><span>⏱ 4 hours</span><span>🍽 6 servings</span></div>
+<details><summary>View Recipe / ترکیب دیکھیں</summary><div class="recipe-detail"><h4>Ingredients / اجزاء</h4><ul><li>Beef 1 kg / گوشت</li><li>Nihari masala 3 tbsp / نہاری مصالحہ</li><li>Onion 2 / پیاز</li><li>Ginger garlic 2 tbsp / ادرک لہسن</li><li>Flour 3 tbsp / آٹا</li><li>Oil ½ cup / تیل</li></ul><h4>Method / طریقہ</h4><ol><li>Fry onions and beef. پیاز اور گوشت بھونیں۔</li><li>Add spices and water. مصالحے اور پانی شامل کریں۔</li><li>Slow cook until meat is tender. ہلکی آنچ پر گوشت گلائیں۔</li><li>Mix flour with water, add and simmer until thick. آٹے کا مکسچر ڈال کر گاڑھا کریں۔</li></ol></div></details>
+</div></article>
 
-<!-- 5 -->
 <article class="recipe-card" data-region="Punjab">
-<img src="https://loremflickr.com/640/420/halwa,puri,breakfast" alt="Halwa Puri">
-<div class="card-content">
-<span class="region">Punjab</span>
-<h3>5. Halwa Puri</h3>
-<p>A much-loved traditional Pakistani breakfast.</p>
-<div class="recipe-info">⏱ 50 min | 🍽 4 servings</div>
-<details>
-<summary>View Full Recipe</summary>
-<h4>Ingredients (English)</h4>
-<ul>
-<li>Semolina – 1 cup</li><li>Sugar – 1 cup</li>
-<li>Ghee – ½ cup</li><li>Cardamom – 3</li>
-<li>Flour – 2 cups</li><li>Salt – ½ tsp</li>
-<li>Water and oil for frying</li>
-</ul>
-<h4 class="urdu">اجزاء (اردو)</h4>
-<ul class="urdu">
-<li>سوجی – ایک کپ</li><li>چینی – ایک کپ</li>
-<li>گھی – آدھا کپ</li><li>الائچی – 3 عدد</li>
-<li>میدہ – 2 کپ</li><li>نمک – آدھا چمچ</li>
-<li>پانی اور تلنے کے لیے تیل</li>
-</ul>
-<h4>Cooking Method (English)</h4>
-<ol>
-<li>Roast semolina in ghee with cardamom.</li>
-<li>Add water and sugar and cook until halwa thickens.</li>
-<li>Mix flour, salt and water to make a soft dough.</li>
-<li>Rest the dough for 15 minutes.</li>
-<li>Make small puris and fry in hot oil until puffed and golden.</li>
-<li>Serve puris with halwa and chana.</li>
-</ol>
-<h4 class="urdu">ترکیب (اردو)</h4>
-<ol class="urdu">
-<li>گھی میں سوجی اور الائچی بھونیں۔</li>
-<li>پانی اور چینی شامل کرکے حلوہ گاڑھا کریں۔</li>
-<li>میدہ، نمک اور پانی ملا کر نرم آٹا گوندھیں۔</li>
-<li>آٹے کو 15 منٹ رکھ دیں۔</li>
-<li>چھوٹی پوریاں بنا کر گرم تیل میں سنہری ہونے تک تلیں۔</li>
-<li>حلوے اور چنوں کے ساتھ پیش کریں۔</li>
-</ol>
-</details>
-</div>
-</article>
+<div class="photo"><div class="fallback">🍳</div><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=700&q=80" alt="Halwa puri" onerror="this.style.display='none'"></div>
+<div class="recipe-info"><span class="tag">Punjab</span><h3>Halwa Puri</h3><div class="urdu">حلوہ پوری</div><p>A beloved Pakistani weekend breakfast.</p><div class="meta"><span>⏱ 45 min</span><span>🍽 4 servings</span></div>
+<details><summary>View Recipe / ترکیب دیکھیں</summary><div class="recipe-detail"><h4>Ingredients / اجزاء</h4><ul><li>Semolina 1 cup / سوجی</li><li>Sugar ¾ cup / چینی</li><li>Flour 2 cups / میدہ</li><li>Oil for frying / تلنے کے لیے تیل</li><li>Cardamom 3 / الائچی</li><li>Water as needed / پانی</li></ul><h4>Method / طریقہ</h4><ol><li>Roast semolina in ghee. سوجی گھی میں بھونیں۔</li><li>Add water, sugar and cardamom. پانی، چینی اور الائچی ڈالیں۔</li><li>Prepare a dough, roll puris and fry in hot oil. آٹا گوندھ کر پوریاں بیلیں اور تلیں۔</li><li>Serve halwa with puri. حلوے کے ساتھ پوری پیش کریں۔</li></ol></div></details>
+</div></article>
 
-<!-- 6 -->
+<!-- SINDH -->
 <article class="recipe-card" data-region="Sindh">
-<img src="https://loremflickr.com/640/420/sindhi,biryani" alt="Sindhi Biryani">
-<div class="card-content">
-<span class="region">Sindh</span>
-<h3>6. Sindhi Biryani</h3>
-<p>Famous for its spicy flavour and layered rice.</p>
-<div class="recipe-info">⏱ 75 min | 🍽 6 servings</div>
-<details>
-<summary>View Full Recipe</summary>
-<h4>Ingredients (English)</h4>
-<ul>
-<li>Basmati rice – 3 cups</li><li>Chicken – 1 kg</li>
-<li>Potatoes – 2</li><li>Yoghurt – 1 cup</li>
-<li>Tomatoes – 3</li><li>Onions – 2</li>
-<li>Biryani masala – 2 tbsp</li>
-<li>Green chillies, mint, coriander and lemon</li>
-</ul>
-<h4 class="urdu">اجزاء (اردو)</h4>
-<ul class="urdu">
-<li>باسمتی چاول – 3 کپ</li><li>چکن – ایک کلو</li>
-<li>آلو – 2 عدد</li><li>دہی – ایک کپ</li>
-<li>ٹماٹر – 3 عدد</li><li>پیاز – 2 عدد</li>
-<li>بریانی مصالحہ – 2 چمچ</li>
-<li>ہری مرچ، پودینہ، دھنیا اور لیموں</li>
-</ul>
-<h4>Cooking Method (English)</h4>
-<ol>
-<li>Soak rice and boil until almost cooked.</li>
-<li>Fry onions and add chicken, tomatoes and spices.</li>
-<li>Add yoghurt and potatoes and cook until chicken is done.</li>
-<li>Layer rice over the chicken masala.</li>
-<li>Add mint, coriander, lemon and a little food colour if desired.</li>
-<li>Cover and cook on low heat until the rice is tender.</li>
-</ol>
-<h4 class="urdu">ترکیب (اردو)</h4>
-<ol class="urdu">
-<li>چاول بھگو کر تقریباً پکنے تک ابالیں۔</li>
-<li>پیاز فرائی کرکے چکن، ٹماٹر اور مصالحے شامل کریں۔</li>
-<li>دہی اور آلو ڈال کر چکن پکائیں۔</li>
-<li>چکن کے مصالحے پر چاول کی تہہ لگائیں۔</li>
-<li>پودینہ، دھنیا اور لیموں شامل کریں۔</li>
-<li>ڈھک کر ہلکی آنچ پر دم دیں۔</li>
-</ol>
-</details>
-</div>
-</article>
+<div class="photo"><div class="fallback">🍚</div><img src="https://images.unsplash.com/photo-1563379091339-03246963d51a?auto=format&fit=crop&w=700&q=80" alt="Biryani" onerror="this.style.display='none'"></div>
+<div class="recipe-info"><span class="tag">Sindh</span><h3>Sindhi Biryani</h3><div class="urdu">سندھی بریانی</div><p>Spicy rice with potatoes, chicken and fragrant spices.</p><div class="meta"><span>⏱ 60 min</span><span>🍽 6 servings</span></div>
+<details><summary>View Recipe / ترکیب دیکھیں</summary><div class="recipe-detail"><h4>Ingredients / اجزاء</h4><ul><li>Rice 3 cups / چاول</li><li>Chicken 750g / چکن</li><li>Potatoes 2 / آلو</li><li>Yogurt 1 cup / دہی</li><li>Biryani masala 2 tbsp / بریانی مصالحہ</li><li>Mint and coriander / پودینہ، دھنیا</li></ul><h4>Method / طریقہ</h4><ol><li>Cook chicken with yogurt and spices. چکن دہی اور مصالحوں کے ساتھ پکائیں۔</li><li>Boil rice separately. چاول الگ ابالیں۔</li><li>Layer rice and chicken. چاول اور چکن کی تہہ لگائیں۔</li><li>Steam on low heat until done. ہلکی آنچ پر دم دیں۔</li></ol></div></details>
+</div></article>
 
-<!-- 7 -->
 <article class="recipe-card" data-region="Sindh">
-<img src="https://loremflickr.com/640/420/sai,bhaji,spinach" alt="Sai Bhaji">
-<div class="card-content">
-<span class="region">Sindh</span>
-<h3>7. Sindhi Sai Bhaji</h3>
-<p>A nutritious spinach, lentil and vegetable dish.</p>
-<div class="recipe-info">⏱ 50 min | 🍽 4 servings</div>
-<details>
-<summary>View Full Recipe</summary>
-<h4>Ingredients (English)</h4>
-<ul>
-<li>Spinach – 500 g</li><li>Chana dal – ½ cup</li>
-<li>Tomato – 1</li><li>Onion – 1</li>
-<li>Potato – 1</li><li>Green chillies – 2</li>
-<li>Ginger garlic – 1 tbsp</li>
-<li>Turmeric, salt and oil</li>
-</ul>
-<h4 class="urdu">اجزاء (اردو)</h4>
-<ul class="urdu">
-<li>پالک – آدھا کلو</li><li>چنے کی دال – آدھا کپ</li>
-<li>ٹماٹر – ایک</li><li>پیاز – ایک</li>
-<li>آلو – ایک</li><li>ہری مرچ – 2</li>
-<li>ادرک لہسن – ایک چمچ</li>
-<li>ہلدی، نمک اور تیل</li>
-</ul>
-<h4>Cooking Method (English)</h4>
-<ol>
-<li>Wash and chop spinach and vegetables.</li>
-<li>Wash and soak chana dal briefly.</li>
-<li>Cook everything with spices and water until soft.</li>
-<li>Mash lightly to combine the ingredients.</li>
-<li>Prepare an onion and garlic tempering.</li>
-<li>Pour over the bhaji and serve with rice.</li>
-</ol>
-<h4 class="urdu">ترکیب (اردو)</h4>
-<ol class="urdu">
-<li>پالک اور سبزیاں دھو کر کاٹ لیں۔</li>
-<li>چنے کی دال دھو کر تھوڑی دیر بھگو دیں۔</li>
-<li>تمام چیزیں مصالحوں اور پانی کے ساتھ گلنے تک پکائیں۔</li>
-<li>ہلکا سا گھوٹ لیں۔</li>
-<li>پیاز اور لہسن کا تڑکا تیار کریں۔</li>
-<li>تڑکا ڈال کر چاول کے ساتھ پیش کریں۔</li>
-</ol>
-</details>
-</div>
-</article>
+<div class="photo"><div class="fallback">🥬</div><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80" alt="Sai bhaji" onerror="this.style.display='none'"></div>
+<div class="recipe-info"><span class="tag">Sindh</span><h3>Sindhi Sai Bhaji</h3><div class="urdu">سندھی سائی بھاجی</div><p>A nutritious mix of spinach, lentils and vegetables.</p><div class="meta"><span>⏱ 45 min</span><span>🍽 4 servings</span></div>
+<details><summary>View Recipe / ترکیب دیکھیں</summary><div class="recipe-detail"><h4>Ingredients / اجزاء</h4><ul><li>Spinach 500g / پالک</li><li>Split chickpeas ½ cup / چنا دال</li><li>Tomato 1 / ٹماٹر</li><li>Onion 1 / پیاز</li><li>Green chilli 2 / ہری مرچ</li><li>Oil 3 tbsp / تیل</li></ul><h4>Method / طریقہ</h4><ol><li>Wash and chop vegetables. سبزیاں دھو کر کاٹیں۔</li><li>Cook with lentils and water until soft. دال کے ساتھ نرم ہونے تک پکائیں۔</li><li>Mash and prepare a simple onion tempering. بھون کر تیار کریں۔</li><li>Mix and serve hot. ملا کر گرم پیش کریں۔</li></ol></div></details>
+</div></article>
 
-<!-- 8 -->
 <article class="recipe-card" data-region="Sindh">
-<img src="https://loremflickr.com/640/420/sindhi,curry" alt="Sindhi Kadhi">
-<div class="card-content">
-<span class="region">Sindh</span>
-<h3>8. Sindhi Kadhi</h3>
-<p>A tangy gram-flour curry with vegetables.</p>
-<div class="recipe-info">⏱ 45 min | 🍽 4 servings</div>
-<details>
-<summary>View Full Recipe</summary>
-<h4>Ingredients (English)</h4>
-<ul>
-<li>Gram flour – ½ cup</li><li>Potatoes – 2</li>
-<li>Okra – 6</li><li>Tomato – 1</li>
-<li>Tamarind water – ½ cup</li>
-<li>Curry leaves – 8</li><li>Turmeric – ½ tsp</li>
-<li>Mustard seeds, salt and oil</li>
-</ul>
-<h4 class="urdu">اجزاء (اردو)</h4>
-<ul class="urdu">
-<li>بیسن – آدھا کپ</li><li>آلو – 2 عدد</li>
-<li>بھنڈی – 6 عدد</li><li>ٹماٹر – ایک</li>
-<li>املی کا پانی – آدھا کپ</li>
-<li>کڑی پتے – 8</li><li>ہلدی – آدھا چمچ</li>
-<li>رائی، نمک اور تیل</li>
-</ul>
-<h4>Cooking Method (English)</h4>
-<ol>
-<li>Heat oil and lightly fry gram flour.</li>
-<li>Add turmeric and water gradually, stirring to avoid lumps.</li>
-<li>Add tomatoes, curry leaves and spices.</li>
-<li>Add potatoes and cook until nearly tender.</li>
-<li>Add fried okra and tamarind water.</li>
-<li>Simmer until vegetables are cooked and serve with rice.</li>
-</ol>
-<h4 class="urdu">ترکیب (اردو)</h4>
-<ol class="urdu">
-<li>تیل گرم کرکے بیسن ہلکا سا بھونیں۔</li>
-<li>ہلدی اور پانی آہستہ آہستہ شامل کریں۔</li>
-<li>ٹماٹر، کڑی پتے اور مصالحے ڈالیں۔</li>
-<li>آلو تقریباً گلنے تک پکائیں۔</li>
-<li>تلی ہوئی بھنڈی اور املی کا پانی شامل کریں۔</li>
-<li>سبزیاں پکنے پر چاول کے ساتھ پیش کریں۔</li>
-</ol>
-</details>
-</div>
-</article>
+<div class="photo"><div class="fallback">🍲</div><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=700&q=80" alt="Sindhi kadhi" onerror="this.style.display='none'"></div>
+<div class="recipe-info"><span class="tag">Sindh</span><h3>Sindhi Kadhi</h3><div class="urdu">سندھی کڑھی</div><p>Tangy gram-flour curry with seasonal vegetables.</p><div class="meta"><span>⏱ 40 min</span><span>🍽 4 servings</span></div>
+<details><summary>View Recipe / ترکیب دیکھیں</summary><div class="recipe-detail"><h4>Ingredients / اجزاء</h4><ul><li>Gram flour ½ cup / بیسن</li><li>Tamarind ¼ cup / املی</li><li>Potato 1 / آلو</li><li>Okra 6 / بھنڈی</li><li>Tomato 1 / ٹماٹر</li><li>Curry leaves / کڑی پتے</li></ul><h4>Method / طریقہ</h4><ol><li>Roast gram flour in oil. بیسن تیل میں بھونیں۔</li><li>Add water and stir until smooth. پانی ڈال کر مکس کریں۔</li><li>Add tamarind and vegetables. املی اور سبزیاں شامل کریں۔</li><li>Simmer until vegetables are cooked. سبزیاں گلنے تک پکائیں۔</li></ol></div></details>
+</div></article>
 
-<!-- 9 -->
 <article class="recipe-card" data-region="Sindh">
-<img src="https://loremflickr.com/640/420/dal,pakwan" alt="Dal Pakwan">
-<div class="card-content">
-<span class="region">Sindh</span>
-<h3>9. Dal Pakwan</h3>
-<p>A traditional Sindhi breakfast combination.</p>
-<div class="recipe-info">⏱ 45 min | 🍽 4 servings</div>
-<details>
-<summary>View Full Recipe</summary>
-<h4>Ingredients (English)</h4>
-<ul>
-<li>Chana dal – 1 cup</li><li>Flour – 2 cups</li>
-<li>Cumin – 1 tsp</li><li>Turmeric – ½ tsp</li>
-<li>Red chilli – ½ tsp</li><
+<div class="photo"><div class="fallback">🍛</div><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80" alt="Dal pakwan" onerror="this.style.display='none'"></div>
+<div class="recipe-info"><span class="tag">Sindh</span><h3>Dal Pakwan</h3><div class="urdu">دال پکوان</div><p>Yellow lentils served with crispy traditional bread.</p><div class="meta"><span>⏱ 45 min</span><span>🍽 4 servings</span></div>
+<details><summary>View Recipe / ترکیب دیکھیں</summary><div class="recipe-detail"><h4>Ingredients / اجزاء</h4><ul><li>Chana dal 1 cup / چنا دال</li><li>Flour 2 cups / میدہ</li><li>Cumin 1 tsp / زیرہ</li><li>Red chilli 1 tsp / لال مرچ</li><li>Oil / تیل</li><li>Salt / نمک</li></ul><h4>Method / طریقہ</h4><ol><li>Boil dal with spices until tender. دال مصالحوں کے ساتھ ابالیں۔</li><li>Prepare dough with flour and salt. میدہ اور نمک سے آٹا گوندھیں۔</li><li>Roll flat pakwan and fry until crisp. پکوان بیل کر خستہ ہونے تک تلیں۔</li><li>Serve dal with pakwan. دال پکوان کے ساتھ پیش کریں۔</li></ol></div></details>
+</div></article>
+
+<article class="recipe-card" data-region="Sindh">
+<div class="photo"><div class="fallback">🐟</div><img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=700&q=80" alt="Fish" onerror="this.style.display='none'"></div>
+<div class="recipe-info"><span class="tag">Sindh</span><h3>Sindhi Pallo Fish</h3><div class="urdu">سندھی پلو مچھلی</div><p>A traditional Indus river fish preparation.</p><div class="meta"><span>⏱ 35 min</span><span>🍽 4 servings</span></div>
+<details><summary>View Recipe / ترکیب دیکھیں</summary><div class="recipe-detail"><h4>Ingredients / اجزاء</h4><ul><li>Fish 750g / مچھلی</li><li>Red chilli 1 tsp / لال مرچ</li><li>Turmeric ½ tsp / ہلدی</li><li>Lemon 1 / لیموں</li><li>Ginger garlic 1 tbsp / ادرک لہسن</li><li>Oil / تیل</li></ul><h4>Method / طریقہ</h4><ol><li>Clean fish carefully. مچھلی اچھی طرح صاف کریں۔</li><li>Apply spices, lemon and ginger garlic. مصالحے اور لیموں لگائیں۔</li><li>Cook thoroughly in a pan. پین میں اچھی طرح پکائیں۔</li><li>Serve with lemon. لیموں کے ساتھ پیش کریں۔</li></ol></div></details>
+</div></article>
+
+<!-- KHYBER PAKHTUNKHWA -->
+<article class="recipe-card" data-region="Khyber Pakhtunkhwa">
+<div class="photo"><div class="fallback">🍢</div><img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=700&q=80" alt="Chapli kebab" onerror="this.style.display='none'"></div>
+<div class="recipe-info"><span class="tag">KPK</span><h3>Peshawari Chapli Kebab</h3><div class="urdu">پشاوری چپلی کباب</div><p>Famous flat kebabs with tomatoes and aromatic spices.</p><div class="meta"><span>⏱ 40 min</span><span>🍽 4 servings</span></div>
+<details><summary>View Recipe / ترکیب دیکھیں</summary><div class="recipe-detail"><h4>Ingredients / اجزاء</h4><ul><li>Minced beef 500g / قیمہ</li><li>Tomato 1 / ٹماٹر</li><li>Onion 1 / پیاز</li><li>Egg 1 / انڈا</li><li>Coriander seeds 1 tbsp / ثابت دھنیا</li><li>Maize flour 2 tbsp / مکئی کا آٹا</li></ul><h4>Method / طریقہ</h4><ol><li>Mix mince with chopped ingredients and spices. قیمے میں تمام اجزاء ملائیں۔</li><li>Shape into flat kebabs. چپٹے کباب بنائیں۔</li><li>Cook thoroughly in a pan. پین میں اچھی طرح پکائیں۔</li><li>Serve with chutney. چٹنی کے ساتھ پیش کریں۔</li></ol></div></details>
+</div></article>
+
+<article class="recipe-card" data-region="Khyber Pakhtunkhwa">
+<div class="photo"><div class="fallback">🍲</div><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80" alt="Charsi karahi" onerror="this.style.display='none'"></div>
+<div class="recipe-info"><span class="tag">KPK</span><h3>Peshawari Charsi Karahi</h3><div class="urdu">پشاوری چرسی کڑاہی</div><p>Simple, rich meat karahi with tomatoes and black pepper.</p><div class="meta"><span>⏱ 50 min</span><span>🍽 4 servings</span></div>
+<details><summary>View Recipe / ترکیب دیکھیں</summary><div class="recipe-detail"><h4>Ingredients / اجزاء</h4><ul><li>Mutton 750g / مٹن</li><li>Tomatoes 4 / ٹماٹر</li><li>Black pepper 1 tsp / کالی مرچ</li><li>Salt / نمک</li><li>Ginger 1 tbsp / ادرک</li><li>Oil ¼ cup / تیل</li></ul><h4>Method / طریقہ</h4><ol><li>Cook meat in oil until browned. گوشت تیل میں بھونیں۔</li><li>Add tomatoes, salt and pepper. ٹماٹر، نمک اور مرچ ڈالیں۔</li><li>Cook until meat is tender and sauce thickens. 

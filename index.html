@@ -3,260 +3,301 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tasty Kitchen | Pakistani Cuisine</title>
+<title>Tasty Kitchen | Flavours of Pakistan</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#fff9ef;color:#38251f}
-header{background:#681f2c;color:white;padding:20px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-header h1{margin:0;color:#f5d58b}
-nav a{color:white;text-decoration:none;margin:8px;font-weight:bold}
-.hero{padding:65px 8%;text-align:center;color:white;background:linear-gradient(#0008,#0008),url('https://loremflickr.com/1400/650/pakistani,food') center/cover}
-.hero h2{font-size:38px;margin:0 0 15px}
-.hero p{font-size:18px}
-.hero button{background:#e5bd69;border:0;padding:13px 25px;border-radius:5px;font-weight:bold;cursor:pointer}
-.intro{text-align:center;padding:35px 15px}
-.intro h2,.section-title{color:#742b37}
-.filters{text-align:center;padding:10px}
-input,select{padding:12px;margin:7px;border:1px solid #c9a77a;border-radius:6px;font-size:15px}
-.recipes{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:22px;padding:20px 6% 50px}
-.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #0002}
-.card img{width:100%;height:190px;object-fit:cover;background:#eee}
-.card-content{padding:16px}
-.card h3{color:#742b37;margin:5px 0}
-.card .urdu{color:#94613d;font-size:17px}
-.card p{line-height:1.5}
-.card button{background:#742b37;color:white;border:0;padding:10px 15px;border-radius:5px;cursor:pointer}
-.details{display:none;border-top:1px solid #eadaca;margin-top:12px;padding-top:10px;line-height:1.6}
-.details h4{color:#742b37;margin-bottom:4px}
-footer{background:#681f2c;color:white;text-align:center;padding:25px}
-@media(max-width:600px){header{justify-content:center;text-align:center;gap:12px}.hero h2{font-size:28px}}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fbf6e9;color:#26372c;font-family:Arial,sans-serif}
+header{background:#173d30;color:white;padding:17px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{font-family:Georgia,serif;font-size:27px;color:#e8c77d;font-weight:bold}
+nav a{color:white;text-decoration:none;margin:8px;font-size:14px}
+nav a:hover{color:#e8c77d}
+.hero{min-height:440px;display:flex;align-items:center;padding:55px 8%;color:white;background:linear-gradient(90deg,#102b24eF,#102b2460),url('https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=1600&q=85') center/cover}
+.hero-content{max-width:580px}
+.tag{color:#f0ce83;letter-spacing:3px;font-size:13px;font-weight:bold}
+.hero h1{font-family:Georgia,serif;font-size:48px;line-height:1.15;margin:15px 0}
+.hero p{font-size:17px;line-height:1.7}
+.btn{display:inline-block;background:#d7ad59;color:#173d30;text-decoration:none;padding:14px 23px;border-radius:5px;font-weight:bold;margin-top:12px}
+.intro{text-align:center;padding:48px 15px 25px}
+.intro h2{font-family:Georgia,serif;color:#214c39;font-size:30px;margin-bottom:10px}
+.intro p{color:#766e5e;line-height:1.6}
+.features{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:10px 15px 30px}
+.feature{background:#fff;border:1px solid #eadfc8;padding:14px 22px;border-radius:30px;color:#31543e;font-size:14px}
+.filters{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:15px}
+input,select{padding:14px;border:1px solid #d6c49e;border-radius:7px;background:white;font-size:15px;max-width:100%}
+input{width:320px}
+select{width:220px}
+.section-heading{text-align:center;padding:25px 10px 10px}
+.section-heading h2{font-family:Georgia,serif;color:#214c39;font-size:31px;margin-bottom:8px}
+.section-heading p{color:#827762}
+.recipes{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:24px;padding:25px 6% 65px}
+.card{background:white;border-radius:13px;overflow:hidden;box-shadow:0 5px 20px #31442c16;transition:.25s;border:1px solid #eee5d3}
+.card:hover{transform:translateY(-5px);box-shadow:0 10px 25px #31442c25}
+.card img{width:100%;height:205px;object-fit:cover;display:block;background:#e7dfce}
+.card-body{padding:17px}
+.region{font-size:11px;letter-spacing:1px;color:#9a783e;font-weight:bold;text-transform:uppercase}
+.card h3{font-family:Georgia,serif;color:#214c39;font-size:21px;margin:9px 0 5px}
+.urdu{font-size:18px;color:#9a7044;margin-bottom:12px}
+.card p{font-size:14px;line-height:1.6;color:#716c60;min-height:44px}
+.card button{background:#214c39;color:white;border:0;border-radius:5px;padding:11px 17px;cursor:pointer;font-size:14px}
+.card button:hover{background:#b58b43}
+.details{display:none;border-top:1px solid #eee3d1;margin-top:15px;padding-top:10px;font-size:14px;line-height:1.7}
+.details h4{color:#214c39;margin-bottom:4px}
+.details ul{padding-left:19px}
+.about{background:#e9eddf;text-align:center;padding:45px 18px}
+.about h2{font-family:Georgia,serif;color:#214c39}
+.about p{max-width:650px;margin:auto;line-height:1.8;color:#5d665a}
+footer{background:#173d30;color:#eee8d7;text-align:center;padding:28px 15px}
+footer strong{color:#e8c77d;font-family:Georgia,serif;font-size:22px}
+@media(max-width:600px){
+header{justify-content:center;gap:12px}
+nav{text-align:center}
+.hero{min-height:390px;padding:40px 7%;background-position:center}
+.hero h1{font-size:36px}
+.hero p{font-size:15px}
+.intro h2,.section-heading h2{font-size:26px}
+.recipes{grid-template-columns:1fr;padding:20px 5% 45px}
+.card img{height:220px}
+input,select{width:90%}
+.filters{flex-direction:column;align-items:center}
+}
 </style>
 </head>
 <body>
 
 <header>
-<h1>🍲 Tasty Kitchen</h1>
+<div class="logo">🍃 Tasty Kitchen</div>
 <nav>
 <a href="#home">Home</a>
 <a href="#recipes">Recipes</a>
-<a href="#about">About</a>
+<a href="#about">Our Story</a>
 </nav>
 </header>
 
 <section class="hero" id="home">
-<h2>Discover the Taste of Pakistan</h2>
-<p>Explore our traditional recipes, rich flavours and beautiful food culture.</p>
-<button onclick="document.getElementById('recipes').scrollIntoView()">Explore Recipes</button>
+<div class="hero-content">
+<div class="tag">A TASTE OF PAKISTAN</div>
+<h1>Tradition Served With Love</h1>
+<p>Explore the beautiful flavours of Pakistan. From spicy karahis to traditional regional dishes, discover recipes that bring our culture to your table.</p>
+<a class="btn" href="#recipes">Explore Our Recipes →</a>
+</div>
 </section>
 
-<section class="intro" id="about">
-<h2>Proud of our beautiful culture and cuisines.</h2>
-<p>Discover traditional Pakistani dishes from every region.</p>
+<section class="intro">
+<h2>Proud of Our Beautiful Culture & Cuisines</h2>
+<p>Every region has a story, and every dish has a special taste.</p>
 </section>
+
+<div class="features">
+<div class="feature">🍲 Traditional Recipes</div>
+<div class="feature">🌿 Regional Flavours</div>
+<div class="feature">❤️ Made With Love</div>
+</div>
 
 <div class="filters">
-<input type="text" id="search" placeholder="Search your favourite recipe...">
+<input id="search" type="text" placeholder="🔍 Search a recipe...">
 <select id="region">
 <option value="all">All Regions</option>
 <option>Punjab</option>
 <option>Sindh</option>
 <option>Khyber Pakhtunkhwa</option>
 <option>Balochistan</option>
-<option>Gilgit Baltistan</option>
 <option>Kashmir</option>
 </select>
 </div>
 
-<h2 class="section-title" style="text-align:center" id="recipes">Our Traditional Recipes</h2>
+<div class="section-heading" id="recipes">
+<h2>Our Traditional Recipes</h2>
+<p>Discover 15 delicious dishes from across Pakistan</p>
+</div>
+
 <div class="recipes" id="recipeList"></div>
 
+<section class="about" id="about">
+<h2>A Journey Through Pakistani Food Culture</h2>
+<p>Pakistani cuisine is a beautiful combination of traditions, spices and regional flavours. Our recipes celebrate the food heritage of Punjab, Sindh, Khyber Pakhtunkhwa, Balochistan and Kashmir. Discover, cook and enjoy!</p>
+</section>
+
 <footer>
-<h2>🍲 Tasty Kitchen</h2>
-<p>Celebrating the taste and traditions of Pakistan.</p>
+<strong>🍃 Tasty Kitchen</strong>
+<p>Celebrating the flavours and traditions of Pakistan.</p>
 <p>Made with love ❤️</p>
 </footer>
 
 <script>
-const recipes = [
-{
-name:"Sarson Ka Saag",urdu:"سرسوں کا ساگ",region:"Punjab",
-image:"https://loremflickr.com/640/480/mustard,greens,saag",
-desc:"A traditional Punjabi winter dish.",
-ingredients:"Mustard greens, spinach, corn flour, ginger, garlic, green chillies, butter.",
-steps:"1. Wash and chop the greens. 2. Cook with ginger, garlic and chillies until soft. 3. Mash or blend. 4. Add corn flour and cook until thick. 5. Serve with butter and makki ki roti."
-},
-{
-name:"Lahori Chikar Cholay",urdu:"لاہوری چھکر چھولے",region:"Punjab",
-image:"https://loremflickr.com/640/480/chickpea,curry",
-desc:"A famous spicy chickpea dish from Lahore.",
-ingredients:"White chickpeas, onion, tomato, ginger, garlic, spices, oil.",
-steps:"1. Soak and boil chickpeas. 2. Prepare an onion and tomato masala. 3. Add spices and chickpeas. 4. Mash a few chickpeas for a thick gravy. 5. Simmer and serve."
-},
+const recipes=[
 {
 name:"Chicken Karahi",urdu:"چکن کڑاہی",region:"Punjab",
-image:"https://loremflickr.com/640/480/chicken,karahi",
-desc:"A popular Pakistani tomato-based chicken curry.",
-ingredients:"Chicken, tomatoes, ginger, garlic, green chillies, oil, salt, red chilli, coriander.",
-steps:"1. Heat oil and add chicken. 2. Cook until its colour changes. 3. Add tomatoes and spices. 4. Cook until the tomatoes soften and gravy thickens. 5. Garnish with ginger and chillies."
+image:"https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=85",
+desc:"A rich and spicy Pakistani favourite.",
+ingredients:["Chicken - 1 kg","Tomatoes - 4","Ginger and garlic - 2 tbsp","Green chillies - 4","Salt and spices","Cooking oil"],
+steps:["Heat oil in a karahi and add chicken.","Cook until its colour changes.","Add tomatoes, ginger, garlic and spices.","Cook until chicken is tender and gravy thickens.","Garnish with green chillies and ginger."]
 },
 {
 name:"Beef Nihari",urdu:"بیف نہاری",region:"Punjab",
-image:"https://loremflickr.com/640/480/beef,nihari",
-desc:"Slow-cooked beef curry with aromatic spices.",
-ingredients:"Beef, onion, ginger, garlic, nihari spices, flour, oil, coriander.",
-steps:"1. Fry onions. 2. Add beef, ginger, garlic and spices. 3. Add water and cook slowly until tender. 4. Mix flour with water and add gradually. 5. Simmer and garnish."
+image:"https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=85",
+desc:"Slow-cooked beef with aromatic spices.",
+ingredients:["Beef - 1 kg","Onion - 2","Ginger garlic paste - 2 tbsp","Nihari masala - 3 tbsp","Wheat flour - 3 tbsp","Oil and salt"],
+steps:["Fry onions in oil.","Add beef, ginger garlic and spices.","Add water and cook slowly until meat is tender.","Mix flour with water and add gradually.","Simmer until thick and serve."]
+},
+{
+name:"Sarson Ka Saag",urdu:"سرسوں کا ساگ",region:"Punjab",
+image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85",
+desc:"A comforting traditional Punjabi winter dish.",
+ingredients:["Mustard greens - 500 g","Spinach - 250 g","Ginger - 1 tbsp","Garlic - 5 cloves","Corn flour - 2 tbsp","Butter"],
+steps:["Wash and chop all greens.","Cook with ginger, garlic and a little water.","When soft, mash or blend.","Add corn flour and cook until thick.","Serve with butter and makki ki roti."]
 },
 {
 name:"Halwa Puri",urdu:"حلوہ پوری",region:"Punjab",
-image:"https://loremflickr.com/640/480/halwa,puri,breakfast",
-desc:"A much-loved traditional Pakistani breakfast.",
-ingredients:"Semolina, sugar, ghee, flour, water, oil, cardamom.",
-steps:"1. Prepare dough with flour and water. 2. Roll small puris and fry. 3. Roast semolina in ghee. 4. Add water, sugar and cardamom. 5. Cook until halwa thickens."
+image:"https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=85",
+desc:"A beloved traditional Pakistani breakfast.",
+ingredients:["Semolina - 1 cup","Sugar - 1 cup","Flour - 2 cups","Ghee - 1/2 cup","Water","Cardamom"],
+steps:["Prepare a dough using flour and water.","Roll into small circles and fry puris.","Roast semolina in ghee.","Add water, sugar and cardamom.","Cook until the halwa thickens and serve."]
 },
 {
 name:"Sindhi Biryani",urdu:"سندھی بریانی",region:"Sindh",
-image:"https://loremflickr.com/640/480/pakistani,biryani",
-desc:"Aromatic rice layered with spicy masala.",
-ingredients:"Rice, chicken, potatoes, yogurt, tomatoes, onions, plums, biryani spices.",
-steps:"1. Cook chicken with yogurt, vegetables and spices. 2. Boil rice separately until partly cooked. 3. Layer rice and chicken masala. 4. Cover and steam on low heat. 5. Mix gently before serving."
+image:"https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=800&q=85",
+desc:"Fragrant rice with spicy chicken masala.",
+ingredients:["Rice - 500 g","Chicken - 750 g","Yogurt - 1 cup","Potatoes - 2","Tomatoes - 3","Biryani spices"],
+steps:["Prepare chicken masala with yogurt and spices.","Boil rice until partly cooked.","Layer rice and chicken masala in a pot.","Cover and steam on low heat.","Mix gently and serve."]
 },
 {
 name:"Sindhi Sai Bhaji",urdu:"سندھی سائیں بھاجی",region:"Sindh",
-image:"https://loremflickr.com/640/480/spinach,lentil,curry",
-desc:"A nutritious combination of greens and lentils.",
-ingredients:"Spinach, dill, lentils, tomato, onion, garlic, green chillies, spices.",
-steps:"1. Wash and chop the greens. 2. Add lentils and vegetables to a pot. 3. Add water and spices. 4. Cook until everything is soft. 5. Mash lightly and serve."
+image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85",
+desc:"A nutritious mixture of greens and lentils.",
+ingredients:["Spinach - 2 bunches","Chana dal - 1/2 cup","Tomato - 2","Onion - 1","Garlic and spices"],
+steps:["Wash and chop the greens.","Add greens, lentils and vegetables to a pot.","Add water and spices.","Cook until everything is soft.","Mash lightly and serve."]
 },
 {
 name:"Sindhi Kadhi",urdu:"سندھی کڑھی",region:"Sindh",
-image:"https://loremflickr.com/640/480/indian,sindhi,kadhi",
-desc:"A tangy gram-flour curry with vegetables.",
-ingredients:"Gram flour, tamarind, tomatoes, okra, potatoes, carrots, curry leaves, spices.",
-steps:"1. Roast gram flour in oil. 2. Add water slowly while stirring. 3. Add vegetables and spices. 4. Cook until vegetables are tender. 5. Add tamarind water and simmer."
+image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85",
+desc:"Tangy gram flour curry with vegetables.",
+ingredients:["Gram flour - 1 cup","Tamarind - 2 tbsp","Potatoes - 2","Okra - 6","Tomatoes - 2","Spices"],
+steps:["Roast gram flour in oil.","Add water slowly while stirring.","Add vegetables and spices.","Cook until vegetables are tender.","Add tamarind water and simmer."]
 },
 {
 name:"Dal Pakwan",urdu:"دال پکوان",region:"Sindh",
-image:"https://loremflickr.com/640/480/dal,pakwan",
-desc:"Crispy flatbread served with seasoned lentils.",
-ingredients:"Chana dal, flour, cumin, turmeric, salt, oil, green chutney.",
-steps:"1. Boil chana dal with turmeric. 2. Prepare a cumin and spice tempering. 3. Mix flour, salt and water into dough. 4. Roll and fry crispy pakwan. 5. Serve with dal and chutney."
-},
-{
-name:"Sindhi Pallo Fish",urdu:"سندھی پلو مچھلی",region:"Sindh",
-image:"https://loremflickr.com/640/480/fried,fish",
-desc:"Traditional Sindhi-style fish preparation.",
-ingredients:"Pallo fish, lemon, red chilli, turmeric, salt, coriander, oil.",
-steps:"1. Clean the fish. 2. Mix spices with lemon juice. 3. Coat the fish with the mixture. 4. Allow it to rest briefly. 5. Cook in a pan until done."
+image:"https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=85",
+desc:"Crispy pakwan served with seasoned lentils.",
+ingredients:["Chana dal - 1 cup","Flour - 2 cups","Cumin - 1 tsp","Turmeric - 1/2 tsp","Salt and oil"],
+steps:["Boil dal with turmeric until soft.","Prepare a spice tempering.","Mix flour, salt and water into dough.","Roll and fry crispy pakwan.","Serve with dal and chutney."]
 },
 {
 name:"Peshawari Chapli Kebab",urdu:"پشاوری چپلی کباب",region:"Khyber Pakhtunkhwa",
-image:"https://loremflickr.com/640/480/chapli,kebab",
+image:"https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=85",
 desc:"Famous flat minced-meat kebabs from Peshawar.",
-ingredients:"Minced beef, onion, tomato, coriander, green chilli, egg, spices, flour.",
-steps:"1. Mix mince with chopped vegetables and spices. 2. Add egg and a little flour. 3. Shape into flat kebabs. 4. Cook in a pan with oil until fully cooked. 5. Serve hot."
+ingredients:["Minced beef - 500 g","Onion - 1","Tomato - 1","Egg - 1","Coriander - 2 tbsp","Spices"],
+steps:["Mix mince with chopped onion and spices.","Add tomato, coriander and egg.","Shape into flat kebabs.","Cook in a pan until fully cooked.","Serve with chutney."]
 },
 {
 name:"Charsi Karahi",urdu:"چرسی کڑاہی",region:"Khyber Pakhtunkhwa",
-image:"https://loremflickr.com/640/480/mutton,karahi",
-desc:"A simple and rich meat karahi associated with Peshawar.",
-ingredients:"Mutton, tomatoes, ginger, green chillies, salt, black pepper, oil.",
-steps:"1. Cook mutton until tender. 2. Add tomatoes and salt. 3. Cook until tomatoes soften. 4. Add black pepper and green chillies. 5. Garnish with ginger."
-},
-{
-name:"Namkeen Gosht",urdu:"نمکین گوشت",region:"Khyber Pakhtunkhwa",
-image:"https://loremflickr.com/640/480/mutton,meat,curry",
-desc:"A traditional meat dish seasoned simply.",
-ingredients:"Mutton, salt, black pepper, ginger, garlic, oil, green chillies.",
-steps:"1. Add meat to a pot with ginger and garlic. 2. Add salt and a little water. 3. Cook until tender. 4. Add oil and black pepper. 5. Cook until lightly browned."
+image:"https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=85",
+desc:"A famous Peshawari-style meat karahi.",
+ingredients:["Mutton - 1 kg","Tomatoes - 4","Green chillies - 4","Black pepper - 1 tsp","Salt","Oil"],
+steps:["Cook mutton until tender.","Add tomatoes and salt.","Cook until tomatoes soften.","Add black pepper and green chillies.","Garnish with ginger."]
 },
 {
 name:"Kabuli Pulao",urdu:"کابلی پلاؤ",region:"Khyber Pakhtunkhwa",
-image:"https://loremflickr.com/640/480/kabuli,pulao",
-desc:"Fragrant rice with meat, carrots and raisins.",
-ingredients:"Rice, beef or mutton, carrots, raisins, onion, cumin, cardamom, oil.",
-steps:"1. Cook meat with spices until tender. 2. Prepare stock. 3. Fry carrots and raisins separately. 4. Cook rice in the meat stock. 5. Garnish with carrots and raisins."
+image:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=85",
+desc:"Aromatic rice with meat, carrots and raisins.",
+ingredients:["Rice - 500 g","Beef - 500 g","Carrots - 2","Raisins - 1/4 cup","Onion - 1","Whole spices"],
+steps:["Cook meat with spices until tender.","Prepare stock from the meat.","Fry carrots and raisins separately.","Cook rice in the stock.","Garnish with carrots and raisins."]
+},
+{
+name:"Namkeen Gosht",urdu:"نمکین گوشت",region:"Khyber Pakhtunkhwa",
+image:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85",
+desc:"Traditional meat cooked with simple seasonings.",
+ingredients:["Mutton - 1 kg","Salt - 1 tsp","Black pepper - 1 tsp","Ginger - 1 tbsp","Garlic - 5 cloves","Oil"],
+steps:["Add meat, ginger, garlic and salt to a pot.","Add a little water and cook until tender.","Add oil and black pepper.","Cook until lightly browned.","Serve hot."]
 },
 {
 name:"Balochi Sajji",urdu:"بلوچی سجی",region:"Balochistan",
-image:"https://loremflickr.com/640/480/roasted,whole,chicken",
-desc:"A traditional roasted meat dish from Balochistan.",
-ingredients:"Whole chicken, salt, lemon, black pepper, ginger, garlic.",
-steps:"1. Clean the chicken. 2. Apply salt, lemon and spices. 3. Allow the flavour to develop. 4. Roast until fully cooked. 5. Serve with rice or bread."
-},
-{
-name:"Balochi Kaak Bread",urdu:"بلوچی کاک",region:"Balochistan",
-image:"https://loremflickr.com/640/480/traditional,flatbread",
-desc:"A traditional firm bread from Balochistan.",
-ingredients:"Wheat flour, water, salt.",
-steps:"1. Mix flour, salt and water. 2. Knead into firm dough. 3. Shape into a thick round bread. 4. Cook until firm and golden. 5. Serve with meat or tea."
+image:"https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=85",
+desc:"A traditional roasted meat speciality.",
+ingredients:["Whole chicken - 1","Salt - 1 tsp","Lemon - 2","Black pepper - 1 tsp","Ginger garlic paste"],
+steps:["Clean the chicken.","Apply lemon, salt and spices.","Allow it to marinate.","Roast until fully cooked.","Serve with rice or bread."]
 },
 {
 name:"Balochi Dampukht",urdu:"بلوچی دمپخت",region:"Balochistan",
-image:"https://loremflickr.com/640/480/mutton,rice,pot",
-desc:"A slow-cooked traditional meat preparation.",
-ingredients:"Mutton, potatoes, onion, tomatoes, ginger, garlic, salt, spices.",
-steps:"1. Place meat and vegetables in a pot. 2. Add ginger, garlic and spices. 3. Add a little water. 4. Cover and cook slowly until tender. 5. Serve hot."
-},
-{
-name:"Gilgiti Chapshuro",urdu:"گلگتی چپ شورو",region:"Gilgit Baltistan",
-image:"https://loremflickr.com/640/480/meat,stuffed,bread",
-desc:"A traditional stuffed bread from Gilgit-Baltistan.",
-ingredients:"Flour, minced meat, onion, coriander, green chilli, salt, pepper.",
-steps:"1. Prepare dough. 2. Mix mince with onion and spices. 3. Roll dough into circles. 4. Add filling and seal. 5. Cook on a pan until golden and the filling is fully cooked."
-},
-{
-name:"Traditional Harissa",urdu:"روایتی حریسہ",region:"Kashmir",
-image:"https://loremflickr.com/640/480/kashmiri,harissa",
-desc:"A slow-cooked traditional Kashmiri meat dish.",
-ingredients:"Meat, rice, wheat, ginger, fennel, salt, spices.",
-steps:"1. Soak wheat and rice. 2. Cook meat until tender. 3. Add grains and spices. 4. Cook slowly until creamy. 5. Mix well and serve hot."
+image:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85",
+desc:"Slow-cooked meat with traditional spices.",
+ingredients:["Mutton - 750 g","Potatoes - 2","Onion - 1","Tomatoes - 2","Ginger garlic - 2 tbsp","Salt and spices"],
+steps:["Place meat and vegetables in a pot.","Add ginger, garlic and spices.","Add a little water.","Cover and cook slowly until tender.","Serve hot."]
 },
 {
 name:"Kashmiri Rogan Josh",urdu:"کشمیری روغن جوش",region:"Kashmir",
-image:"https://loremflickr.com/640/480/kashmiri,rogan,josh",
+image:"https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=85",
 desc:"Aromatic Kashmiri curry with warming spices.",
-ingredients:"Mutton, yogurt, Kashmiri chilli, fennel, ginger powder, cardamom, oil.",
-steps:"1. Brown the meat lightly. 2. Add yogurt and spices. 3. Stir well. 4. Add water and cook slowly until meat is tender. 5. Serve with rice."
+ingredients:["Mutton - 750 g","Yogurt - 1 cup","Kashmiri chilli - 1 tbsp","Fennel powder - 1 tsp","Ginger powder - 1 tsp","Whole spices"],
+steps:["Brown the meat lightly.","Add yogurt and spices.","Stir well and add water.","Cook slowly until meat is tender.","Serve with rice."]
 }
 ];
 
 function showRecipes(){
 const list=document.getElementById("recipeList");
-const search=document.getElementById("search").value.toLowerCase();
+const search=document.getElementById("search").value.toLowerCase().trim();
 const region=document.getElementById("region").value;
 list.innerHTML="";
 const filtered=recipes.filter(r=>
-(r.name.toLowerCase().includes(search)||r.urdu.includes(search)) &&
+(r.name.toLowerCase().includes(search)||r.urdu.includes(search))&&
 (region==="all"||r.region===region)
 );
 filtered.forEach((r,i)=>{
-const card=document.createElement("div");
+const card=document.createElement("article");
 card.className="card";
-card.innerHTML=`
-<img src="${r.image}" alt="${r.name}" loading="lazy">
-<div class="card-content">
-<h3>${r.name}</h3>
-<div class="urdu">${r.urdu}</div>
-<p>${r.desc}</p>
-<small>📍 ${r.region}</small><br><br>
-<button onclick="toggleDetails(this)">View Recipe</button>
-<div class="details">
-<h4>Ingredients</h4>
-<p>${r.ingredients}</p>
-<h4>Cooking Instructions</h4>
-<p>${r.steps}</p>
-</div>
-</div>`;
+const img=document.createElement("img");
+img.src=r.image;
+img.alt=r.name;
+img.loading="lazy";
+img.onerror=function(){
+this.onerror=null;
+this.src="https://placehold.co/800x500/e9eddf/214c39?text="+encodeURIComponent(r.name);
+};
+const body=document.createElement("div");
+body.className="card-body";
+const regionLabel=document.createElement("div");
+regionLabel.className="region";
+regionLabel.textContent="📍 "+r.region;
+const title=document.createElement("h3");
+title.textContent=r.name;
+const urdu=document.createElement("div");
+urdu.className="urdu";
+urdu.textContent=r.urdu;
+const desc=document.createElement("p");
+desc.textContent=r.desc;
+const button=document.createElement("button");
+button.textContent="View Recipe +";
+const details=document.createElement("div");
+details.className="details";
+const ingredientsTitle=document.createElement("h4");
+ingredientsTitle.textContent="Ingredients";
+const ul=document.createElement("ul");
+r.ingredients.forEach(item=>{
+const li=document.createElement("li");
+li.textContent=item;
+ul.appendChild(li);
+});
+const stepsTitle=document.createElement("h4");
+stepsTitle.textContent="Cooking Instructions";
+const steps=document.createElement("ol");
+r.steps.forEach(item=>{
+const li=document.createElement("li");
+li.textContent=item;
+steps.appendChild(li);
+});
+details.append(ingredientsTitle,ul,stepsTitle,steps);
+button.onclick=()=>{
+const open=details.style.display==="block";
+details.style.display=open?"none":"block";
+button.textContent=open?"View Recipe +":"Hide Recipe −";
+};
+body.append(regionLabel,title,urdu,desc,button,details);
+card.append(img,body);
 list.appendChild(card);
 });
 if(filtered.length===0){
-list.innerHTML="<p>No recipe found. Try another name.</p>";
+list.innerHTML="<p>No recipe found. Try another search.</p>";
 }
-}
-function toggleDetails(button){
-const details=button.nextElementSibling;
-details.style.display=details.style.display==="block"?"none":"block";
-button.textContent=details.style.display==="block"?"Hide Recipe":"View Recipe";
 }
 document.getElementById("search").addEventListener("input",showRecipes);
 document.getElementById("region").addEventListener("change",showRecipes);
